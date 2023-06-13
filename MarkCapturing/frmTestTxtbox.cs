@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MarkCapturing
 {
-    public partial class Form1 : Form
+    public partial class frmTestTxtbox : Form
     {
-        public Form1()
+        public frmTestTxtbox()
         {
             InitializeComponent();
         }
