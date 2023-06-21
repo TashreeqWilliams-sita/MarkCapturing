@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
-namespace DataAccessLibrary
+namespace DataAccessLibrary.Repositories
 {
     //In the repository we will handle database operations related to our EKS_PUNTESTATE and Vraagleer tables
     //We need to get by marksheet number
