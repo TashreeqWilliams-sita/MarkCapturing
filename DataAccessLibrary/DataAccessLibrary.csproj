@@ -54,7 +54,12 @@
     <Compile Include="BoxNommersPerVraestel.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Interfaces\ILoginView.cs" />
+    <Compile Include="Interfaces\IMarksheetRepository.cs" />
+    <Compile Include="Interfaces\IUpdateQuestionsView.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\MarksheetRepository.cs" />
+    <Compile Include="Scoresheets.cs" />
     <Compile Include="DatabasisNommer.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
