@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MarkCapturing.Views;
+using System;
 using System.Windows.Forms;
 
 namespace MarkCapturing
@@ -16,7 +14,10 @@ namespace MarkCapturing
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogInForm());
+            Application.Run(new FrmLogin());
+            Application.Run(new MenuForm());
+            Application.Run(new UpdateQuestionMarksForm());
+            Application.Run(new UpdatingQuestionsForm());
         }
     }
 }
