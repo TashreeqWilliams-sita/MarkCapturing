@@ -1,0 +1,254 @@
+To implement the functionality where the admin can select a user, allow them to reset their password, and generate a temporary password, you can follow these steps:
+
+1. Update the `IAdminForm.cs` interface to include the necessary methods and events:
+```csharp
+public interface IAdminForm
+{
+    // Event to handle the "Password Requests" button click
+    event EventHandler PasswordRequestsClicked;
+
+    // Method to display the list of password reset requests
+    void ShowPasswordRequests(List<string> usernames);
+
+    // Method to enable/disable the password reset checkbox
+    void EnablePasswordReset(bool enable);
+
+    // Method to prompt the admin for the user's new temporary password
+    string PromptTemporaryPassword();
+
+    // Method to display success/failure messages
+    void ShowSuccessMessage(string message);
+    void ShowErrorMessage(string message);
+}
+```
+
+2. Update the `AdminForm.cs` implementation:
+```csharp
+public partial class AdminForm : Form, IAdminForm
+{
+    // Event handler for the "Password Requests" button click event
+    private void btnPasswordRequests_Click(object sender, EventArgs e)
+    {
+        // Raise the PasswordRequestsClicked event when the button is clicked
+        PasswordRequestsClicked?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void ShowPasswordRequests(List<string> usernames)
+    {
+        // Display the list of password reset requests in a list box
+        lstPasswordRequests.DataSource = usernames;
+    }
+
+    private void lstPasswordRequests_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        // Get the selected username from the list box
+        string selectedUsername = lstPasswordRequests.SelectedItem.ToString();
+
+        // Enable the password reset checkbox
+        EnablePasswordReset(true);
+
+        // Show the selected user's details
+        ShowSelectedUserDetails(selectedUsername);
+    }
+
+    public void EnablePasswordReset(bool enable)
+    {
+        // Enable or disable the password reset checkbox based on the 'enable' parameter
+        chkResetPassword.Enabled = enable;
+    }
+
+    private void chkResetPassword_CheckedChanged(object sender, EventArgs e)
+    {
+        // Enable or disable controls based on the checkbox state
+        bool enableReset = chkResetPassword.Checked;
+
+        // Enable or disable controls as per your requirement
+        // For example, you can enable/disable a "Generate Temporary Password" button
+        btnGenerateTempPassword.Enabled = enableReset;
+    }
+
+    public string PromptTemporaryPassword()
+    {
+        // Prompt the admin for the new temporary password using an input dialog or password dialog
+        // Return the entered temporary password
+        // For simplicity, we'll use the InputBox function as an example (you can replace it with a suitable input control)
+        return InputBox("Enter Temporary Password", "Temporary Password");
+    }
+
+    public void ShowSuccessMessage(string message)
+    {
+        MessageBox.Show(message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+
+    public void ShowErrorMessage(string message)
+    {
+        MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+
+    // Existing code...
+}
+```
+
+3. Update the `IAdminPresenter.cs` interface to include the necessary methods and events:
+```csharp
+public interface IAdminPresenter
+{
+    void HandlePasswordRequests();
+    void HandleSelectedUser(string username);
+    void HandleGenerateTemporaryPassword(string username);
+}
+```
+
+4. Update the `AdminPresenter.cs` implementation:
+```csharp
+public class AdminPresenter : IAdminPresenter
+{
+    private readonly IAdminForm adminForm;
+    private readonly YourDbContext dbContext;
+
+    public AdminPresenter(IAdminForm adminForm, YourDbContext dbContext)
+    {
+        this.adminForm = adminForm;
+        this.dbContext = dbContext;
+
+        // Subscribe to the PasswordRequestsClicked event
+        adminForm.PasswordRequestsClicked += AdminForm_PasswordRequestsClicked;
+    }
+
+    public void HandlePasswordRequests()
+    {
+        List<string> passwordRequests = GetPasswordRequests();
+
+        // Display the list of password reset requests in the admin form
+        adminForm.ShowPasswordRequests(passwordRequests);
+    }
+
+    private List<string> GetPasswordRequests()
+    {
+        // Implement your logic to retrieve the list of usernames that have requested a password reset
+        // For example, you can query the PasswordResetRequests table in the database to get the list of usernames
+        // You may need to use your data access layer to perform this operation
+        // For simplicity, we assume we have a List<string> called passwordRequestsList
+        List<string> passwordRequestsList = dbContext.PasswordResetRequests.Select(r => r.UserName).ToList();
+        return passwordRequestsList;
+    }
+
+    public void HandleSelectedUser(string username)
+    {
+        // Show the selected user's details in the admin form
+        adminForm.ShowSelectedUserDetails(username);
+    }
+
+    public void HandleGenerateTemporaryPassword(string username)
+    {
+        // Prompt the admin for the new temporary password
+        string temporaryPassword = adminForm.PromptTemporaryPassword();
+
+        // Update the user's password with the temporary password
+        bool isTemporaryPasswordGenerated = GenerateTemporaryPassword(username, temporaryPassword);
+
+        if (isTemporaryPasswordGenerated)
+        {
+            // Show a success message in the admin form
+           
+
+adminForm.ShowSuccessMessage("Temporary password generated successfully.");
+        }
+        else
+        {
+            // Show an error message in the admin form
+            adminForm.ShowErrorMessage("Failed to generate the temporary password.");
+        }
+    }
+
+    private bool GenerateTemporaryPassword(string username, string temporaryPassword)
+    {
+        try
+        {
+            // Get the user from the database based on the username
+            var user = dbContext.Users.FirstOrDefault(u => u.UserName == username);
+
+            if (user != null)
+            {
+                // Set the temporary password and update the password reset flags
+                user.Password = temporaryPassword;
+                user.IsPasswordResetRequested = true;
+                user.IsPasswordReset = true;
+                user.ResetToken = null; // Clear the reset token
+                user.ResetTokenExpiry = null; // Clear the reset token expiry
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception or log the error
+            return false;
+        }
+    }
+}
+```
+
+=========================================================================================================================================
+                                    RESET PASSWORD FUNCTIONALITY
+=========================================================================================================================================
+1.Following our MVP Pattern we need 
+// Check if IsPasswordReset is true
+if (user.IsPasswordReset)
+{
+    // Compare the entered password with the reset token
+    if (enteredPassword == user.ResetToken)
+    {
+        // Show reset password form to enter new password
+        var resetPasswordForm = new ResetPasswordForm(user.UserName);
+        resetPasswordForm.ShowDialog();
+
+        if (resetPasswordForm.DialogResult == DialogResult.OK)
+        {
+            // Retrieve the new password from the reset password form
+            string newPassword = resetPasswordForm.NewPassword;
+
+            // Encrypt the new password using the encryption helper
+            string encryptedPassword = EncryptionHelper.Encrypt(newPassword);
+
+            // Update the user's password in the database
+            bool isPasswordUpdated = userRepository.UpdatePassword(user.UserName, encryptedPassword);
+
+            if (isPasswordUpdated)
+            {
+                // Reset the IsPasswordReset flag
+                bool isResetFlagUpdated = userRepository.UpdateIsPasswordReset(user.UserName, false);
+
+                if (isResetFlagUpdated)
+                {
+                    // Delete the corresponding reset request from the table
+                    bool isResetRequestDeleted = resetRequestRepository.DeleteResetRequest(user.UserName);
+
+                    if (isResetRequestDeleted)
+                    {
+                        // Log out the user
+                        LogoutUser();
+                        ShowLoginMessage("Password reset successfully. Please log in again with your new password.");
+                    }
+                    else
+                    {
+                        ShowErrorMessage("Failed to delete reset request. Please contact the administrator.");
+                    }
+                }
+                else
+                {
+                    ShowErrorMessage("Failed to update IsPasswordReset flag. Please contact the administrator.");
+                }
+            }
+            else
+            {
+                ShowErrorMessage("Failed to update password. Please contact the administrator.");
+            }
+        }
+    }
+    else
+    {
+        ShowErrorMessage("Please use your reset token as the password or contact the administrator.");
+    }
+}

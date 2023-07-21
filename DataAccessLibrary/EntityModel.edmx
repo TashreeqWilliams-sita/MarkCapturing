@@ -4778,6 +4778,16 @@ warning 6002: The table/view 'NSC_VraagpunteStelsel.dbo.MONITOR_SERVERS_DETAIL' 
           <Property Name="Other_Process_CPU_Utilization" Type="int" />
           <Property Name="Event_Time" Type="datetime" />
         </EntityType>
+        <EntityType Name="PasswordResetRequests">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RequestDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ResetToken" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ResetTokenExpiry" Type="datetime" Nullable="false" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'NSC_VraagpunteStelsel.dbo.PNTA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PNTA">
@@ -4849,6 +4859,13 @@ warning 6002: The table/view 'NSC_VraagpunteStelsel.dbo.Punte' does not have a p
           <Property Name="MSheet9" Type="nchar" MaxLength="10" />
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="MSheet8" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="Sentrumadreslys">
           <Key>
@@ -4978,6 +4995,10 @@ warning 6002: The table/view 'NSC_VraagpunteStelsel.dbo.temp' does not have a pr
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CampusID" Type="numeric" Precision="18" Scale="0" />
           <Property Name="AccessCardID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IsPasswordResetRequested" Type="bit" Nullable="false" />
+          <Property Name="IsPasswordReset" Type="bit" Nullable="false" />
+          <Property Name="ResetToken" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResetTokenExpiry" Type="datetime" />
         </EntityType>
         <EntityType Name="Vakke">
           <Key>
@@ -6178,7 +6199,9 @@ warning 6002: The table/view 'NSC_VraagpunteStelsel.dbo.Wagwoord_888_Vaslegging'
           <EntitySet Name="EKS-VraagPunte-A-ZULHL30" EntityType="Self.EKS-VraagPunte-A-ZULHL30" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FOUT-BOODSKAPPE" EntityType="Self.FOUT-BOODSKAPPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Intervalle" EntityType="Self.Intervalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PasswordResetRequests" EntityType="Self.PasswordResetRequests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Puntestate" EntityType="Self.Puntestate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sentrumadreslys" EntityType="Self.Sentrumadreslys" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tariewe" EntityType="Self.Tariewe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblActiveSubjects" EntityType="Self.tblActiveSubjects" Schema="dbo" store:Type="Tables" />
@@ -11437,6 +11460,16 @@ FROM [dbo].[Wagwoord_888_Vaslegging] AS [Wagwoord_888_Vaslegging]</DefiningQuery
           <Property Name="Interval" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="rowguid" Type="Guid" Nullable="false" />
         </EntityType>
+        <EntityType Name="PasswordResetRequest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RequestDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ResetToken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResetTokenExpiry" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <EntityType Name="Puntestate">
           <Key>
             <PropertyRef Name="Puntestaat" />
@@ -11464,6 +11497,13 @@ FROM [dbo].[Wagwoord_888_Vaslegging] AS [Wagwoord_888_Vaslegging]</DefiningQuery
           <Property Name="MSheet9" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="rowguid" Type="Guid" Nullable="false" />
           <Property Name="MSheet8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Sentrumadresly">
           <Key>
@@ -11534,6 +11574,10 @@ FROM [dbo].[Wagwoord_888_Vaslegging] AS [Wagwoord_888_Vaslegging]</DefiningQuery
           <Property Name="rowguid" Type="Guid" Nullable="false" />
           <Property Name="CampusID" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="AccessCardID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsPasswordResetRequested" Type="Boolean" Nullable="false" />
+          <Property Name="IsPasswordReset" Type="Boolean" Nullable="false" />
+          <Property Name="ResetToken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResetTokenExpiry" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Vakke">
           <Key>
@@ -13071,7 +13115,9 @@ FROM [dbo].[Wagwoord_888_Vaslegging] AS [Wagwoord_888_Vaslegging]</DefiningQuery
           <EntitySet Name="EKS_VraagPunte_A_ZULHL30" EntityType="Self.EKS_VraagPunte_A_ZULHL30" />
           <EntitySet Name="FOUT_BOODSKAPPE" EntityType="Self.FOUT_BOODSKAPPE" />
           <EntitySet Name="Intervalles" EntityType="Self.Intervalle" />
+          <EntitySet Name="PasswordResetRequests" EntityType="Self.PasswordResetRequest" />
           <EntitySet Name="Puntestates" EntityType="Self.Puntestate" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Sentrumadreslys" EntityType="Self.Sentrumadresly" />
           <EntitySet Name="Tariewes" EntityType="Self.Tariewe" />
           <EntitySet Name="tblActiveSubjects" EntityType="Self.tblActiveSubject" />
@@ -17569,6 +17615,17 @@ FROM [dbo].[Wagwoord_888_Vaslegging] AS [Wagwoord_888_Vaslegging]</DefiningQuery
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PasswordResetRequests">
+            <EntityTypeMapping TypeName="NSC_VraagpunteStelselModel.PasswordResetRequest">
+              <MappingFragment StoreEntitySet="PasswordResetRequests">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="RequestDateTime" ColumnName="RequestDateTime" />
+                <ScalarProperty Name="ResetToken" ColumnName="ResetToken" />
+                <ScalarProperty Name="ResetTokenExpiry" ColumnName="ResetTokenExpiry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Puntestates">
             <EntityTypeMapping TypeName="NSC_VraagpunteStelselModel.Puntestate">
               <MappingFragment StoreEntitySet="Puntestate">
@@ -17595,6 +17652,14 @@ FROM [dbo].[Wagwoord_888_Vaslegging] AS [Wagwoord_888_Vaslegging]</DefiningQuery
                 <ScalarProperty Name="MSheet9" ColumnName="MSheet9" />
                 <ScalarProperty Name="rowguid" ColumnName="rowguid" />
                 <ScalarProperty Name="MSheet8" ColumnName="MSheet8" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="NSC_VraagpunteStelselModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -17668,6 +17733,10 @@ FROM [dbo].[Wagwoord_888_Vaslegging] AS [Wagwoord_888_Vaslegging]</DefiningQuery
                 <ScalarProperty Name="rowguid" ColumnName="rowguid" />
                 <ScalarProperty Name="CampusID" ColumnName="CampusID" />
                 <ScalarProperty Name="AccessCardID" ColumnName="AccessCardID" />
+                <ScalarProperty Name="IsPasswordResetRequested" ColumnName="IsPasswordResetRequested" />
+                <ScalarProperty Name="IsPasswordReset" ColumnName="IsPasswordReset" />
+                <ScalarProperty Name="ResetToken" ColumnName="ResetToken" />
+                <ScalarProperty Name="ResetTokenExpiry" ColumnName="ResetTokenExpiry" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -48,6 +48,8 @@ namespace DataAccessLibrary.Repositories
                                      {
                                          MarksheetNumber = p.PS_Msheet,
                                          SubjectCode = p.PS_VAKKODE,
+                                         ID_NO = p.PS_ID_NO,
+                                         PaperNumberPunte = p.PS_VRSTEL_NO,
                                          PaperNumber = v.VraestelNommer,
                                          NumberOfQuestions = v.GetalVraeOpVraestel
                                      }).ToList();

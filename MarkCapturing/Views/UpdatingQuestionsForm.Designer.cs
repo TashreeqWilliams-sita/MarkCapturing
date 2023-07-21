@@ -112,6 +112,7 @@ namespace MarkCapturing.Views
             this.txtMarksheetNumber.Size = new System.Drawing.Size(160, 20);
             this.txtMarksheetNumber.TabIndex = 18;
             this.txtMarksheetNumber.Text = "32222631";
+            this.txtMarksheetNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMarksheetNumber_KeyDown);
             // 
             // lblMarksheetNo
             // 
@@ -150,6 +151,7 @@ namespace MarkCapturing.Views
             this.Controls.Add(this.lblUpdatingQuestionMarks);
             this.Name = "UpdatingQuestionsForm";
             this.Text = "Mark Capturing System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdatingQuestionsForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

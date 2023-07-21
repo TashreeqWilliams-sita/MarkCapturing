@@ -26,5 +26,9 @@ namespace DataAccessLibrary
         public System.Guid rowguid { get; set; }
         public Nullable<decimal> CampusID { get; set; }
         public Nullable<decimal> AccessCardID { get; set; }
+        public bool IsPasswordResetRequested { get; set; }
+        public bool IsPasswordReset { get; set; }
+        public string ResetToken { get; set; }
+        public Nullable<System.DateTime> ResetTokenExpiry { get; set; }
     }
 }

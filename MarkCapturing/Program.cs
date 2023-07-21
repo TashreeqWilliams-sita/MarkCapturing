@@ -14,10 +14,7 @@ namespace MarkCapturing
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
-            Application.Run(new MenuForm());
-            Application.Run(new UpdateQuestionMarksForm());
-            Application.Run(new UpdatingQuestionsForm());
+            Application.Run(new FormLogin());
         }
     }
 }
