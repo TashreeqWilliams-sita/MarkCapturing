@@ -26,62 +26,57 @@ namespace MarkCapturing.Views
 
         public void ShowListScoresheet(List<Scoresheets> ScoresheetList)
         {
+
+            // Suspend layout while adding controls
             tableLayoutPanel.SuspendLayout();
 
+            // Clear any existing controls in the table layout panel
             tableLayoutPanel.Controls.Clear();
             tableLayoutPanel.RowStyles.Clear();
             tableLayoutPanel.ColumnStyles.Clear();
             tableLayoutPanel.RowCount = 0;
             tableLayoutPanel.ColumnCount = 5;
-            tableLayoutPanel.AutoScroll = true;
 
-            Label lblHeading = new Label
-            {
-                Text = "Paper Number - Question number!!",
-                Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold)
-            };
+            Label lblHeading = new Label();
+            lblHeading.Text = "Mark Details";
+            lblHeading.Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
             tableLayoutPanel.Controls.Add(lblHeading, 0, 0);
             tableLayoutPanel.SetColumnSpan(lblHeading, 5);
 
             int row = 1;
             int column = 0;
-            for (int i = 0; i < ScoresheetList.Count(); i++)
+            int NumOfQ = 0;
+            for (int i = 0; i < ScoresheetList.Count; i++)
             {
-                Scoresheets scoresheets = ScoresheetList[i];
-                Label lblSubHeading = new Label
+                if (ScoresheetList[i].PaperNumber == ScoresheetList[i].PaperNumberPunte)
                 {
-                    Text = $"{scoresheets.SubjectCode}{scoresheets.PaperNumber}",
-                    Font = new Font(FontFamily.GenericSansSerif, 5, FontStyle.Bold)
-                };
-                int numOfQ = (int)ScoresheetList[i].NumberOfQuestions;
-
-                for (int j = 0; j < numOfQ; j++)
+                    NumOfQ = (int)ScoresheetList[i].NumberOfQuestions;
+                }
+                for (int j = 0; j < NumOfQ; j++)
                 {
                     Panel panel = new Panel();
-                    Scoresheets scoresheet = ScoresheetList[j];
-                    Label lblQuestions = new Label
+
+                    Label lblQuestion = new Label
                     {
-                        Text = $"Q {j++}{scoresheet.NumberOfQuestions}:",
+                        Text = $"Q{ScoresheetList[j].NumberOfQuestions}",
                         Dock = DockStyle.Top
                     };
-                    panel.Controls.Add(lblQuestions);
+                    panel.Controls.Add(lblQuestion);
 
-                    TextBox txtQuestionMark = new TextBox
+                    TextBox txtMark = new TextBox
                     {
-                        Name = $"txtQuestionMark_{j}",
-                        /*Width = 80,*/
+                        Name = $"txtMark_{ScoresheetList[j].NumberOfQuestions}",
                         Dock = DockStyle.Bottom,
-                        //Margin = new Padding(0,60,0,60)
-
+                        Margin = new Padding(0, 2, 0, 2),
+                        Width = 50
                     };
 
-                    panel.Controls.Add(txtQuestionMark);
 
-                    panel.Padding = new Padding(10, 20, 10, 20);
-                    panel.Width = 50;
+                    panel.Padding = new Padding(2);
+
+                    panel.Controls.Add(txtMark);
 
                     tableLayoutPanel.Controls.Add(panel, column, row);
-
                     tableLayoutPanel.SetRowSpan(panel, 2);
                     tableLayoutPanel.SetColumnSpan(panel, 1);
 
@@ -95,14 +90,100 @@ namespace MarkCapturing.Views
                         row += 2;
                     }
                 }
-                tableLayoutPanel.Controls.Add(lblSubHeading);
-
+                
             }
+            // Resume layout and perform layout logic
+            tableLayoutPanel.ResumeLayout(true);
+
+            //tableLayoutPanel.SuspendLayout();
+
+            //tableLayoutPanel.Controls.Clear();
+            //tableLayoutPanel.RowStyles.Clear();
+            //tableLayoutPanel.ColumnStyles.Clear();
+            //tableLayoutPanel.RowCount = 0;
+            //tableLayoutPanel.ColumnCount = 5;
+            //tableLayoutPanel.AutoScroll = true;
+
+            //Label lblHeading = new Label
+            //{
+            //    Text = "Paper Number - Question number!!",
+            //    Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold)
+            //};
+            //tableLayoutPanel.Controls.Add(lblHeading, 0, 0);
+            //tableLayoutPanel.SetColumnSpan(lblHeading, 5);
+
+            //int row = 1;
+            //int column = 0;
+            //for (int i = 0; i < ScoresheetList.Count(); i++)
+            //{
+            //    Scoresheets scoresheets = ScoresheetList[i];
+            //    Label lblSubHeading = new Label
+            //    {
+            //        Text = $"{scoresheets.SubjectCode}{scoresheets.PaperNumber}",
+            //        Font = new Font(FontFamily.GenericSansSerif, 5, FontStyle.Bold)
+            //    };
+            //    int numOfQ = (int)ScoresheetList[i].NumberOfQuestions;
+
+            //    for (int j = 0; j < numOfQ; j++)
+            //    {
+            //        Panel panel = new Panel();
+            //        Scoresheets scoresheet = ScoresheetList[j];
+            //        Label lblQuestions = new Label
+            //        {
+            //            Text = $"Q {j++}{scoresheet.NumberOfQuestions}:",
+            //            Dock = DockStyle.Top
+            //        };
+            //        panel.Controls.Add(lblQuestions);
+
+            //        TextBox txtQuestionMark = new TextBox
+            //        {
+            //            Name = $"txtQuestionMark_{j}",
+            //            /*Width = 80,*/
+            //            Dock = DockStyle.Bottom,
+            //            //Margin = new Padding(0,60,0,60)
+
+            //        };
+
+            //        panel.Controls.Add(txtQuestionMark);
+
+            //        panel.Padding = new Padding(10, 20, 10, 20);
+            //        panel.Width = 50;
+
+            //        tableLayoutPanel.Controls.Add(panel, column, row);
+
+            //        tableLayoutPanel.SetRowSpan(panel, 2);
+            //        tableLayoutPanel.SetColumnSpan(panel, 1);
+
+            //        tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+            //        column++;
+
+            //        if (column == 5)
+            //        {
+            //            column = 0;
+            //            row += 2;
+            //        }
+            //    }
+            //    tableLayoutPanel.Controls.Add(lblSubHeading);
+
+            //}
         }
         #region KeyDown
         private void txtMarksheetNumber_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                bool isValidMarksheetNumber = QuestionsPresenter.ValidateMarksheet(MarksheetNumber);
+                //Updatepresenter.ValidateMarksheetNumber(MarksheetNumber);
+                if (isValidMarksheetNumber)
+                {
+                    QuestionsPresenter.SearchMarksheet();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid marksheet number. Please rnter a valid marksheet number.");
+                }
+            }
         }
         #endregion
 

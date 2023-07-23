@@ -58,6 +58,7 @@ namespace MarkCapturing.Views
             this.btnSecurity.TabIndex = 13;
             this.btnSecurity.Text = "Security and System Parameters";
             this.btnSecurity.UseVisualStyleBackColor = false;
+            this.btnSecurity.Click += new System.EventHandler(this.btnSecurity_Click);
             // 
             // btnReports
             // 

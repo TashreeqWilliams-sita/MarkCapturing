@@ -142,7 +142,9 @@ namespace DataAccessLibrary
         public DbSet<EKS_VraagPunte_A_ZULHL30> EKS_VraagPunte_A_ZULHL30 { get; set; }
         public DbSet<FOUT_BOODSKAPPE> FOUT_BOODSKAPPE { get; set; }
         public DbSet<Intervalle> Intervalles { get; set; }
+        public DbSet<PasswordResetRequest> PasswordResetRequests { get; set; }
         public DbSet<Puntestate> Puntestates { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<Sentrumadresly> Sentrumadreslys { get; set; }
         public DbSet<Tariewe> Tariewes { get; set; }
         public DbSet<tblActiveSubject> tblActiveSubjects { get; set; }
