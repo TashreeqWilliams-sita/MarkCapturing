@@ -23,11 +23,17 @@ namespace MarkCapturing.Presenter
             rolesService = new AssigningRolesService();
             authenticationService = new AuthenticationService();
             dbContext = new NSC_VraagpunteStelselEntities();
+            PopulateDropdown();
 
             // Subscribe to the ForgotPasswordClicked event
             loginView.ForgotPasswordClicked += LoginView_ForgotPasswordClicked;
         }
+        public void PopulateDropdown()
+        {
+            List<string> usernames = authenticationService.GetListOfUsernames();
 
+            loginView.PopulateUsernameDropdown(usernames);
+        }
         private void LoginView_ForgotPasswordClicked(object sender, EventArgs e)
         {
             string username = loginView.Username;

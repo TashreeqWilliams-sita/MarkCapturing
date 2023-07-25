@@ -18,7 +18,13 @@ namespace MarkCapturing.Views
     {
         private readonly LogInPresenter loginPresenter;
         public ILoginView loginView;
-        public string Username => TxtUsername.Text.Trim();
+        public string Username
+        {
+            get
+            {
+                return ComboBoxUsernames.SelectedItem?.ToString();
+            }
+        }
         public string Password => TxtPassword.Text.Trim();
         public string Role => loginPresenter.Roles();
         public event EventHandler ForgotPasswordClicked;
@@ -142,6 +148,12 @@ namespace MarkCapturing.Views
         {
             FormResetPassword resetPasswordForm = new FormResetPassword(Username);
             return resetPasswordForm;
+        }
+
+        public void PopulateUsernameDropdown(List<string> usernames)
+        {
+            ComboBoxUsernames.Items.Clear();
+            ComboBoxUsernames.Items.AddRange(usernames.ToArray());
         }
 
         //Abrahams, Bilqees

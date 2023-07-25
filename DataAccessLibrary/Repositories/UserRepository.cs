@@ -16,7 +16,10 @@ namespace DataAccessLibrary.Repositories
         {
             return dbContext.Users.ToList();
         }
-
+        public List<string> GetListOfUsernames()
+        {
+            return GetAllUsers().Select(u => u.UserName).ToList();
+        }
         public User GetUserByUsername(string username)
         {
             return dbContext.Users.FirstOrDefault(u => u.UserName == username);
