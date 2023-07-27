@@ -3,39 +3,68 @@ using System;
 using System.Windows.Forms;
 using MarkCapturing.Views;
 using DataAccessLibrary.Interfaces;
+using DataAccessLibrary.Repositories;
+using MarkCapturing.Views.Interfaces;
 
 namespace MarkCapturing
 {
     public partial class FrmLogin : Form, ILoginView
     {
         private readonly LogInPresenter loginPresenter;
+        public ILoginView loginView;
+
+        public event EventHandler ForgotPasswordClicked;
+
+        //public string username;
+        //public string userRole;
+
+        public string Username => txtUsername.Text.Trim();
+        public string Password => txtPassword.Text.Trim();
+        public string Role => loginPresenter.Roles();
+
         public FrmLogin()
         {
             InitializeComponent();
+            loginView = this;
             loginPresenter = new LogInPresenter(this);
         }
 
         #region ButtonLoginClickEvent
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            string username = "Abbas, Tasmeer";/*txtUsername.Text.Trim();*/
-            string password = "Summer@02"; /*txtPassword.Text.Trim();*/
-            loginPresenter.OnLoginButtonClicked(username, password);
+            //username = /*"Abbas, Tasmeer";/**/txtUsername.Text.Trim();
+            //username = txtUsername.Text.Trim();
+            //userRole = loginPresenter.Roles(username);
+            /*string password = "Summer@02"; *//*txtPassword.Text.Trim();*/
+            loginPresenter.OnLoginButtonClicked();
+
         }
         #endregion
 
         #region Messages
         public void ShowInvalidCredentialsError()
         {
-            MessageBox.Show("Invalid credentials. Please try again.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Invalid credentials. Please try again.\nNB: If you've forgotten your login details kindly contact your administrator", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void ShowLoginSuccess()
         {
             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
             this.Hide();
+            //username = txtUsername.Text.Trim();
+            //var userRole = repository.GetUserRole(username);
+            //ShowForm();
+
+        }
+        //public string GetUserRole()
+        //{
+            
+        //    return userRole;
+        //}
+        public void ShowForm()
+        {
+            //MenuForm menuForm = new MenuForm(this);
+            //menuForm.Show();
         }
 
         public void ShowLoginError()
@@ -82,6 +111,21 @@ namespace MarkCapturing
                     Application.Exit();
                 }
             }
+        }
+
+        public void ShowSuccess(string message)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowUsernameRequiredDialog()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Form ShowResetPasswordForm()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

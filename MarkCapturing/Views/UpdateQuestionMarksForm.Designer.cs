@@ -57,6 +57,7 @@ namespace MarkCapturing.Views
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // btnVerifyMarks
             // 
@@ -79,6 +80,7 @@ namespace MarkCapturing.Views
             this.btnUpdateMarks.TabIndex = 8;
             this.btnUpdateMarks.Text = "Update Question Marks";
             this.btnUpdateMarks.UseVisualStyleBackColor = false;
+            this.btnUpdateMarks.Click += new System.EventHandler(this.BtnUpdateMarks_Click);
             // 
             // UpdateQuestionMarksForm
             // 
@@ -91,6 +93,7 @@ namespace MarkCapturing.Views
             this.Controls.Add(this.btnUpdateMarks);
             this.Name = "UpdateQuestionMarksForm";
             this.Text = "Mark Capturing System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateQuestionMarksForm_FormClosing);
             this.ResumeLayout(false);
 
         }
