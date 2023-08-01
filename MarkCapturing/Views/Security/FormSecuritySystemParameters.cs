@@ -21,13 +21,14 @@ namespace MarkCapturing.Views
         {
             InitializeComponent();
             menuView = _menuView;
-            //LblUserLoggedin.Text = Username;
+            LblUserLoggedin.Text = Username;
         }
 
         public string Username => menuView.Username;
 
         private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests();
             formResetPasswordRequests.Show();
         }
@@ -36,6 +37,17 @@ namespace MarkCapturing.Views
         {
             FormResetPassword formResetPassword = new FormResetPassword(Username);
             formResetPassword.Show();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnRegisterNewUser_Click(object sender, EventArgs e)
+        {
+            FormRegister formRegister = new FormRegister();
+            formRegister.Show();
         }
     }
 }

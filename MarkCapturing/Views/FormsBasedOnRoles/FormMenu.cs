@@ -31,7 +31,6 @@ namespace MarkCapturing.Views
         }
         private void BtnSecurity_Click(object sender, EventArgs e)
         {
-            Hide();
             FormSecuritySystemParameters formResetPassword = new FormSecuritySystemParameters(this);
             formResetPassword.Show();
         }
