@@ -30,5 +30,6 @@ namespace MarkCapturing.Views.Interfaces
         // Method to display success/failure messages
         void ShowSuccessMessage(string message);
         void ShowErrorMessage(string message);
+        void Clear(string username);
     }
 }

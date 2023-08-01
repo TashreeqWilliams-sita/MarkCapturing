@@ -29,7 +29,7 @@ namespace MarkCapturing.Views
         private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests();
+            FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests(Username);
             formResetPasswordRequests.Show();
         }
 

@@ -43,9 +43,9 @@ namespace MarkCapturing.Presenter
                 if (isResetPasswordUpdated)
                 {
                     // Show a success message in the form
-                    resetPasswordView.ShowSuccessMessage($"Reset password allowed for the user: {resetPasswordView.GetSelectedUsername()}.");
+                    resetPasswordView.ShowSuccessMessage($"Reset password was successfull!! \nuser: {resetPasswordView.GetSelectedUsername()}. \nTemporal password: {resetPasswordView.PromptTemporaryPassword()}");
 
-                    //resetPasswordService.Clear(resetPasswordView.GetSelectedUsername());
+                    resetPasswordView.Clear(resetPasswordView.GetSelectedUsername());
                 }
                 else
                 {

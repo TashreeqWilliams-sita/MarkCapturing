@@ -123,7 +123,7 @@ namespace MarkCapturing.Views.Security
 
         public void Exit()
         {
-            Application.Exit();
+            Close();
         }
 
         private void BtnResetPassword_Click(object sender, EventArgs e)

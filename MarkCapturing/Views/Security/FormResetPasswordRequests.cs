@@ -19,21 +19,11 @@ namespace MarkCapturing.Views.Security
         public event EventHandler PasswordRequestsClicked;
         public event EventHandler SaveClicked;
 
-        public FormResetPasswordRequests()
+        public FormResetPasswordRequests(string username)
         {
             InitializeComponent();
             ResetPasswordPresenter = new ResetPasswordRequestPresenter(this);
-        }
-        private void LstPasswordRequests_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Get the selected username from the list box
-            string selectedUsername = LstPasswordRequests.SelectedItem.ToString();
-
-            // Enable the password reset checkbox
-            EnablePasswordReset(true);
-
-            // Show the selected user's details
-            //ShowSelectedUserDetails(selectedUsername);
+            LblUserLoggedin.Text = username;
         }
         public void ShowPasswordRequests(List<string> resetRequests)
         {
@@ -111,6 +101,26 @@ namespace MarkCapturing.Views.Security
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SaveClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void Clear(string username)
+        {
+            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(LstPasswordRequests);
+            selectedItems = LstPasswordRequests.SelectedItems;
+
+            if (LstPasswordRequests.SelectedIndex != -1)
+            {
+                for (int i = selectedItems.Count - 1; i >= 0; i--)
+                    LstPasswordRequests.Items.Remove(selectedItems[i]);
+            }
+            else
+                MessageBox.Show("Couldn't clear");
+            //LstPasswordRequests.ClearSelected();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

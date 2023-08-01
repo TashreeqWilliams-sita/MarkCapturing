@@ -11,5 +11,6 @@ namespace MarkCapturing.Presenter
         void HandlePasswordRequests();
         //void HandleSelectedUser(string username);
         void HandleGenerateTemporaryPassword(string username);
+        void GetTempPassword(string temp);
     }
 }

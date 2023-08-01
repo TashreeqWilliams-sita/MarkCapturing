@@ -22,7 +22,7 @@ namespace MarkCapturing.Presenter
             loginView = view;
             rolesService = new AssigningRolesService();
             authenticationService = new AuthenticationService();
-            //dbContext = new NSC_VraagpunteStelselEntities();
+            dbContext = new NSC_VraagpunteStelselEntities();
             PopulateDropdown();
 
             // Subscribe to the ForgotPasswordClicked event
