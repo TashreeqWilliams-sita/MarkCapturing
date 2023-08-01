@@ -1,5 +1,6 @@
 ﻿using DataAccessLibrary;
 using DataAccessLibrary.Repositories;
+using System.Collections.Generic;
 
 /// <summary>
 /// This class should only be responsible for authenticating if the user exists or not.
@@ -51,6 +52,10 @@ namespace MarkCapturing.Services
         {
             userRepository.UpdatePassword(newPassword,GetUser(username));
             return true;
+        }
+        public List<string> GetListOfUsernames()
+        {
+            return userRepository.GetListOfUsernames();
         }
         public bool IsPasswordReset(bool IsChanged, string username)
         {

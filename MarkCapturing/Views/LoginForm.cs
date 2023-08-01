@@ -5,6 +5,7 @@ using MarkCapturing.Views;
 using DataAccessLibrary.Interfaces;
 using DataAccessLibrary.Repositories;
 using MarkCapturing.Views.Interfaces;
+using System.Collections.Generic;
 
 namespace MarkCapturing
 {
@@ -124,6 +125,11 @@ namespace MarkCapturing
         }
 
         public Form ShowResetPasswordForm()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PopulateUsernameDropdown(List<string> usernames)
         {
             throw new NotImplementedException();
         }
