@@ -17,6 +17,7 @@ namespace MarkCapturing.Views.Interfaces
         void ShowSuccess(string message);
         void ShowUsernameRequiredDialog();
         void ShowLoginError();
+        void PopulateUsernameDropdown(List<string> usernames);
         void ShowForm();
         Form ShowResetPasswordForm();
     }
