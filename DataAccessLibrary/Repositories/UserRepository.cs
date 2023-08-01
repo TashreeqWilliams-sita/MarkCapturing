@@ -16,13 +16,18 @@ namespace DataAccessLibrary.Repositories
         {
             return dbContext.Users.ToList();
         }
-        public List<string> GetListOfUsernames()
-        {
-            return GetAllUsers().Select(u => u.UserName).ToList();
-        }
+        //public List<string> GetListOfUsernames()
+        //{
+        //    return GetAllUsers().Select(u => u.UserName).ToList();
+        //}
         public User GetUserByUsername(string username)
         {
             return dbContext.Users.FirstOrDefault(u => u.UserName == username);
+        }
+        public List<Role> GetAllRoles()
+        {
+            return dbContext.Roles.ToList();
+            //return dbContext.Roles.Select(r => r.RoleName).ToList();
         }
         public List<string> GetAllRoleNames()
         {
@@ -45,7 +50,7 @@ namespace DataAccessLibrary.Repositories
             return false;
         }
 
-        public void AddUser(User user) //For later purposes when we want to add new users
+        public void AddUser(User user)
         {
             dbContext.Users.Add(user);
             dbContext.SaveChanges();
@@ -103,24 +108,6 @@ namespace DataAccessLibrary.Repositories
                 dbContext.SaveChanges();
             }
         }
-        //public List<string> GetPasswordResetUsernames()
-        //{
-        //    // Retrieve the list of usernames that have requested a password reset
-        //    // from the data source
-        //    //List<string> usernames = _users.Where(u => u.ResetPasswordRequested).Select(u => u.Username).ToList();
-        //    return usernames;
-        //}
-
-        //public void ResetPassword(string username, string newPassword)
-        //{
-        //    // Update the password for the specified username in the data source
-        //    User user = _users.FirstOrDefault(u => u.Username == username);
-        //    if (user != null)
-        //    {
-        //        user.Password = newPassword;
-        //        user.ResetPasswordRequested = false; // Reset the reset password flag
-        //    }
-        //}
     }
 }
 

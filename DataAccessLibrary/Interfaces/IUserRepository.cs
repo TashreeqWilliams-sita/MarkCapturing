@@ -10,6 +10,7 @@ namespace DataAccessLibrary.Interfaces
     {
         List<User> GetAllUsers();
         User GetUserByUsername(string username);
+        List<Role> GetAllRoles();
         List<string> GetAllRoleNames();
         bool AssignUserRole(string username, string roleName);
         void UpdateUser(User user);

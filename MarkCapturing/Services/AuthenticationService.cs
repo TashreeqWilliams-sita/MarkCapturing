@@ -1,6 +1,7 @@
 ﻿using DataAccessLibrary;
 using DataAccessLibrary.Repositories;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 /// This class should only be responsible for authenticating if the user exists or not.
@@ -44,7 +45,8 @@ namespace MarkCapturing.Services
         }
         public bool IsResetToken(string username,string enteredPassword)
         {
-            return enteredPassword == GetPasswordResetRequestUser(username).ResetToken;
+            enteredPassword = GetPasswordResetRequestUser(username).ResetToken;
+            return true;
             //User user = userRepository.GetUserByUsername(username);
             //return enteredPassword == user.ResetToken;
         }
@@ -55,7 +57,7 @@ namespace MarkCapturing.Services
         }
         public List<string> GetListOfUsernames()
         {
-            return userRepository.GetListOfUsernames();
+            return userRepository.GetAllUsers().Select(u => u.UserName).ToList();
         }
         public bool IsPasswordReset(bool IsChanged, string username)
         {

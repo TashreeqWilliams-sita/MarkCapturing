@@ -41,9 +41,9 @@ namespace MarkCapturing.Presenter
                     // Retrieve the new password from the reset password form
                     string newPassword = resetPassword.ConfirmPassword;
                     // Encrypt the new password using the encryption helper
-                    string encryptedPassword = EncryptionHelper.HashPassword(newPassword);
+                    //string encryptedPassword = EncryptionHelper.HashPassword(newPassword);
                     // Update the user's password in the database
-                    bool isPasswordUpdated = authenticationService.IsPasswordUpdated(encryptedPassword,resetPassword.Username);
+                    bool isPasswordUpdated = authenticationService.IsPasswordUpdated(newPassword,resetPassword.Username);
 
                     if (isPasswordUpdated)
                     {
