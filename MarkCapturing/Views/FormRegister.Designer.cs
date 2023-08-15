@@ -399,7 +399,7 @@ namespace MarkCapturing.Views
             this.ComboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBoxRoles.FormattingEnabled = true;
-            this.ComboBoxRoles.Location = new System.Drawing.Point(3, 3);
+            this.ComboBoxRoles.Location = new System.Drawing.Point(8, 9);
             this.ComboBoxRoles.Name = "ComboBoxRoles";
             this.ComboBoxRoles.Size = new System.Drawing.Size(384, 24);
             this.ComboBoxRoles.TabIndex = 13;

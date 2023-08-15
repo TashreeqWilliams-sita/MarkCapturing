@@ -1,16 +1,9 @@
-﻿using DataAccessLibrary.Interfaces;
-using MarkCapturing.Presenter;
+﻿using MarkCapturing.Presenter;
 using MarkCapturing.Views.FormsBasedOnRoles;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MarkCapturing.Views.Interfaces;
+using MarkCapturing.Views.Security;
+using System;
+using System.Windows.Forms;
 
 namespace MarkCapturing.Views
 {
@@ -31,6 +24,8 @@ namespace MarkCapturing.Views
         }
         private void BtnSecurity_Click(object sender, EventArgs e)
         {
+            //FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests(Username);
+            //formResetPasswordRequests.Show();
             FormSecuritySystemParameters formResetPassword = new FormSecuritySystemParameters(this);
             formResetPassword.Show();
         }

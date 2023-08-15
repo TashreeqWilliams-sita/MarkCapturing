@@ -25,10 +25,11 @@ namespace MarkCapturing.Views
         }
 
         public string Username => menuView.Username;
+        
 
         private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests(Username);
             formResetPasswordRequests.Show();
         }
@@ -41,7 +42,7 @@ namespace MarkCapturing.Views
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void BtnRegisterNewUser_Click(object sender, EventArgs e)

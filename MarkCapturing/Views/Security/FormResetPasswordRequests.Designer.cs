@@ -72,12 +72,13 @@ namespace MarkCapturing.Views.Security
             this.BtnResetPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnResetPassword.ForeColor = System.Drawing.Color.White;
             this.BtnResetPassword.Location = new System.Drawing.Point(16, 382);
-            this.BtnResetPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnResetPassword.Margin = new System.Windows.Forms.Padding(4);
             this.BtnResetPassword.Name = "BtnResetPassword";
             this.BtnResetPassword.Size = new System.Drawing.Size(560, 43);
             this.BtnResetPassword.TabIndex = 21;
             this.BtnResetPassword.Text = "Reset Password";
             this.BtnResetPassword.UseVisualStyleBackColor = false;
+            this.BtnResetPassword.Click += new System.EventHandler(this.BtnResetPassword_Click);
             // 
             // label13
             // 
@@ -121,7 +122,7 @@ namespace MarkCapturing.Views.Security
             this.PnlPassword.Controls.Add(this.PbxUser);
             this.PnlPassword.Controls.Add(this.LblUserLoggedin);
             this.PnlPassword.Location = new System.Drawing.Point(8, 4);
-            this.PnlPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlPassword.Margin = new System.Windows.Forms.Padding(4);
             this.PnlPassword.Name = "PnlPassword";
             this.PnlPassword.Size = new System.Drawing.Size(531, 46);
             this.PnlPassword.TabIndex = 3;
@@ -130,7 +131,7 @@ namespace MarkCapturing.Views.Security
             // 
             this.PbxUser.Image = global::MarkCapturing.Properties.Resources.user__24_;
             this.PbxUser.Location = new System.Drawing.Point(4, 4);
-            this.PbxUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PbxUser.Margin = new System.Windows.Forms.Padding(4);
             this.PbxUser.Name = "PbxUser";
             this.PbxUser.Size = new System.Drawing.Size(33, 38);
             this.PbxUser.TabIndex = 4;
@@ -204,7 +205,7 @@ namespace MarkCapturing.Views.Security
             this.BtnResetPasswordRequest.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnResetPasswordRequest.ForeColor = System.Drawing.Color.White;
             this.BtnResetPasswordRequest.Location = new System.Drawing.Point(16, 281);
-            this.BtnResetPasswordRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnResetPasswordRequest.Margin = new System.Windows.Forms.Padding(4);
             this.BtnResetPasswordRequest.Name = "BtnResetPasswordRequest";
             this.BtnResetPasswordRequest.Size = new System.Drawing.Size(560, 43);
             this.BtnResetPasswordRequest.TabIndex = 5;
@@ -253,7 +254,7 @@ namespace MarkCapturing.Views.Security
             this.PnlLeft.Controls.Add(this.PbxLogo);
             this.PnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlLeft.Location = new System.Drawing.Point(0, 0);
-            this.PnlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlLeft.Margin = new System.Windows.Forms.Padding(4);
             this.PnlLeft.Name = "PnlLeft";
             this.PnlLeft.Size = new System.Drawing.Size(603, 652);
             this.PnlLeft.TabIndex = 6;
@@ -266,12 +267,13 @@ namespace MarkCapturing.Views.Security
             this.BtnRegisterNewUser.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegisterNewUser.ForeColor = System.Drawing.Color.White;
             this.BtnRegisterNewUser.Location = new System.Drawing.Point(16, 331);
-            this.BtnRegisterNewUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnRegisterNewUser.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRegisterNewUser.Name = "BtnRegisterNewUser";
             this.BtnRegisterNewUser.Size = new System.Drawing.Size(560, 43);
             this.BtnRegisterNewUser.TabIndex = 18;
             this.BtnRegisterNewUser.Text = "Register New User";
             this.BtnRegisterNewUser.UseVisualStyleBackColor = false;
+            this.BtnRegisterNewUser.Click += new System.EventHandler(this.BtnRegisterNewUser_Click);
             // 
             // BtnExit
             // 
@@ -281,7 +283,7 @@ namespace MarkCapturing.Views.Security
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.White;
             this.BtnExit.Location = new System.Drawing.Point(16, 432);
-            this.BtnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(560, 43);
             this.BtnExit.TabIndex = 19;
@@ -305,7 +307,7 @@ namespace MarkCapturing.Views.Security
             // 
             this.PbxLogo.Image = global::MarkCapturing.Properties.Resources.WCEDlogo;
             this.PbxLogo.Location = new System.Drawing.Point(16, 34);
-            this.PbxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PbxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.PbxLogo.Name = "PbxLogo";
             this.PbxLogo.Size = new System.Drawing.Size(132, 105);
             this.PbxLogo.TabIndex = 0;
@@ -324,7 +326,7 @@ namespace MarkCapturing.Views.Security
             this.PnlRight.Controls.Add(this.PnlPassword);
             this.PnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.PnlRight.Location = new System.Drawing.Point(602, 0);
-            this.PnlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlRight.Margin = new System.Windows.Forms.Padding(4);
             this.PnlRight.Name = "PnlRight";
             this.PnlRight.Size = new System.Drawing.Size(543, 652);
             this.PnlRight.TabIndex = 7;
@@ -361,7 +363,7 @@ namespace MarkCapturing.Views.Security
             this.BtnSave.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.BtnSave.Location = new System.Drawing.Point(143, 466);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(213, 43);
             this.BtnSave.TabIndex = 18;
@@ -375,7 +377,7 @@ namespace MarkCapturing.Views.Security
             this.PnlUsername.Controls.Add(this.ChkResetPassword);
             this.PnlUsername.Controls.Add(this.LstPasswordRequests);
             this.PnlUsername.Location = new System.Drawing.Point(0, 233);
-            this.PnlUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlUsername.Margin = new System.Windows.Forms.Padding(4);
             this.PnlUsername.Name = "PnlUsername";
             this.PnlUsername.Size = new System.Drawing.Size(543, 214);
             this.PnlUsername.TabIndex = 12;
@@ -385,7 +387,7 @@ namespace MarkCapturing.Views.Security
             this.ChkResetPassword.AutoSize = true;
             this.ChkResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChkResetPassword.Location = new System.Drawing.Point(8, 185);
-            this.ChkResetPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChkResetPassword.Margin = new System.Windows.Forms.Padding(4);
             this.ChkResetPassword.Name = "ChkResetPassword";
             this.ChkResetPassword.Size = new System.Drawing.Size(128, 21);
             this.ChkResetPassword.TabIndex = 21;
@@ -402,7 +404,7 @@ namespace MarkCapturing.Views.Security
             this.LstPasswordRequests.FormattingEnabled = true;
             this.LstPasswordRequests.ItemHeight = 19;
             this.LstPasswordRequests.Location = new System.Drawing.Point(0, 0);
-            this.LstPasswordRequests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LstPasswordRequests.Margin = new System.Windows.Forms.Padding(4);
             this.LstPasswordRequests.Name = "LstPasswordRequests";
             this.LstPasswordRequests.Size = new System.Drawing.Size(543, 171);
             this.LstPasswordRequests.TabIndex = 21;
@@ -427,7 +429,7 @@ namespace MarkCapturing.Views.Security
             this.Controls.Add(this.PnlLeft);
             this.Controls.Add(this.PnlRight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormResetPasswordRequests";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormResetPasswordRequests";

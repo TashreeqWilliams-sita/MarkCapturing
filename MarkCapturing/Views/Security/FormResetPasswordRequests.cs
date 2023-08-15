@@ -122,5 +122,15 @@ namespace MarkCapturing.Views.Security
         {
             Close();
         }
+
+        private void BtnResetPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRegisterNewUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

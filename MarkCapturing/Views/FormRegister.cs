@@ -18,9 +18,9 @@ namespace MarkCapturing.Views
         private readonly IRegisterView view;
         public FormRegister()
         {
+            InitializeComponent();
             view = this;
             registerPresenter = new RegisterPresenter(this);
-            InitializeComponent();
         }
 
         public string Username
@@ -78,20 +78,57 @@ namespace MarkCapturing.Views
 
         public string SelectedRole
         {
+            get => ComboBoxRoles.SelectedItem?.ToString();
+            set
+            {
+                if (value != null)
+                {
+                    SelectedRole = value;
+                }
+                else
+                {
+                    ShowMessage("Select Role!!");
+                }
+            }
+        }
+        private short Level;
+        public short UserLevel
+        {
             get
             {
-                return ComboBoxRoles.SelectedItem?.ToString();
+                if (SelectedRole == "1")
+                {
+                    return Level = 1;
+                }
+                else if (SelectedRole == "2")
+                {
+                    return Level = 2;
+                }
+                else if (SelectedRole == "4")
+                {
+                    return Level = 4;
+                }
+                else if (SelectedRole == "5")
+                {
+                    return Level = 5;
+                }
+                else if (SelectedRole == "6")
+                {
+                    return Level = 6;
+                }
+                else if (SelectedRole == "7")
+                {
+                    return Level = 7;
+                }
+                else return Level;
+            }
+            set
+            {
+                Level = value;
             }
         }
 
         public event EventHandler ButtonRegisterClicked;
-
-        public void PopulateDropdown(List<string> Roles)
-        {
-            //ComboBoxRoles.Items.Clear();
-            ComboBoxRoles.SelectedIndex = 0;
-            ComboBoxRoles.Items.AddRange(Roles.ToArray());
-        }
 
         public void ShowMessage(string msg)
         {
@@ -106,6 +143,20 @@ namespace MarkCapturing.Views
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             ButtonRegisterClicked?.Invoke(this, EventArgs.Empty);
+        }
+        public void PopulateDropdown(List<string> Roles)
+        {
+            ComboBoxRoles.Items.Clear();
+            ComboBoxRoles.Items.AddRange(Roles.ToArray());
+        }
+
+        public void ClearControls()
+        {
+            TxtConfirmNewPassword.Clear();
+            TxtIDNumber.Clear();
+            TxtNewPassword.Clear();
+            TxtNewUsername.Clear();
+            ComboBoxRoles.SelectedIndex = -1;
         }
     }
 }
