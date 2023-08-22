@@ -1,4 +1,5 @@
-﻿using MarkCapturing.Presenter;
+﻿using DataAccessLibrary.Interfaces;
+using MarkCapturing.Presenter;
 using MarkCapturing.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace MarkCapturing.Views
     {
         private readonly RegisterPresenter registerPresenter;
         private readonly IRegisterView view;
+        public string UserLoggedInName = DataStorage.UserLoggedIn;
         public FormRegister()
         {
             InitializeComponent();
             view = this;
             registerPresenter = new RegisterPresenter(this);
+            LblUserLoggedin.Text = UserLoggedInName;
         }
 
         public string Username
@@ -138,6 +141,8 @@ namespace MarkCapturing.Views
         private void BtnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            FormSecuritySystemParameters formSecuritySystem = new FormSecuritySystemParameters();
+            Program.FormNavController.ShowForm(formSecuritySystem);
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)

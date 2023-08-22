@@ -58,6 +58,8 @@ namespace MarkCapturing.Views.Security
             this.PnlPassword = new System.Windows.Forms.Panel();
             this.PbxUser = new System.Windows.Forms.PictureBox();
             this.LblUserLoggedin = new System.Windows.Forms.Label();
+            this.ChkShowPass = new System.Windows.Forms.CheckBox();
+            this.ChkShowPass2 = new System.Windows.Forms.CheckBox();
             this.PnlConfirmPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlNewPassword.SuspendLayout();
@@ -77,9 +79,10 @@ namespace MarkCapturing.Views.Security
             this.BtnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnResetPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnResetPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.BtnResetPassword.Location = new System.Drawing.Point(88, 436);
+            this.BtnResetPassword.Location = new System.Drawing.Point(117, 537);
+            this.BtnResetPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnResetPassword.Name = "BtnResetPassword";
-            this.BtnResetPassword.Size = new System.Drawing.Size(148, 35);
+            this.BtnResetPassword.Size = new System.Drawing.Size(197, 43);
             this.BtnResetPassword.TabIndex = 18;
             this.BtnResetPassword.Text = "Reset Password ";
             this.BtnResetPassword.UseVisualStyleBackColor = false;
@@ -88,13 +91,15 @@ namespace MarkCapturing.Views.Security
             // PnlConfirmPassword
             // 
             this.PnlConfirmPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.PnlConfirmPassword.Controls.Add(this.ChkShowPass2);
             this.PnlConfirmPassword.Controls.Add(this.checkBox1);
             this.PnlConfirmPassword.Controls.Add(this.TxtConfirmPassword);
             this.PnlConfirmPassword.Controls.Add(this.pictureBox1);
             this.PnlConfirmPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlConfirmPassword.Location = new System.Drawing.Point(196, 375);
+            this.PnlConfirmPassword.Location = new System.Drawing.Point(261, 462);
+            this.PnlConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlConfirmPassword.Name = "PnlConfirmPassword";
-            this.PnlConfirmPassword.Size = new System.Drawing.Size(333, 39);
+            this.PnlConfirmPassword.Size = new System.Drawing.Size(444, 48);
             this.PnlConfirmPassword.TabIndex = 17;
             // 
             // checkBox1
@@ -102,9 +107,10 @@ namespace MarkCapturing.Views.Security
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.checkBox1.Location = new System.Drawing.Point(382, 11);
+            this.checkBox1.Location = new System.Drawing.Point(509, 14);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(65, 23);
+            this.checkBox1.Size = new System.Drawing.Size(75, 25);
             this.checkBox1.TabIndex = 16;
             this.checkBox1.Text = "Show";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -115,9 +121,10 @@ namespace MarkCapturing.Views.Security
             this.TxtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.TxtConfirmPassword.Location = new System.Drawing.Point(46, 13);
+            this.TxtConfirmPassword.Location = new System.Drawing.Point(61, 16);
+            this.TxtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtConfirmPassword.Name = "TxtConfirmPassword";
-            this.TxtConfirmPassword.Size = new System.Drawing.Size(278, 17);
+            this.TxtConfirmPassword.Size = new System.Drawing.Size(290, 21);
             this.TxtConfirmPassword.TabIndex = 6;
             this.TxtConfirmPassword.UseSystemPasswordChar = true;
             this.TxtConfirmPassword.Click += new System.EventHandler(this.TxtConfirmPassword_Click);
@@ -125,9 +132,10 @@ namespace MarkCapturing.Views.Security
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MarkCapturing.Properties.Resources.safety_security_unlock_icon_1320190938147203473;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -136,9 +144,10 @@ namespace MarkCapturing.Views.Security
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(173, 195);
+            this.label13.Location = new System.Drawing.Point(231, 240);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(203, 16);
+            this.label13.Size = new System.Drawing.Size(256, 19);
             this.label13.TabIndex = 11;
             this.label13.Text = "Please Enter a new password below";
             // 
@@ -147,9 +156,10 @@ namespace MarkCapturing.Views.Security
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(25, 156);
+            this.label11.Location = new System.Drawing.Point(33, 192);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(499, 16);
+            this.label11.Size = new System.Drawing.Size(632, 19);
             this.label11.TabIndex = 9;
             this.label11.Text = "You have requested a password change please use the form below to reset your pass" +
     "word";
@@ -157,13 +167,15 @@ namespace MarkCapturing.Views.Security
             // PnlNewPassword
             // 
             this.PnlNewPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.PnlNewPassword.Controls.Add(this.ChkShowPass);
             this.PnlNewPassword.Controls.Add(this.chkShowPassword);
             this.PnlNewPassword.Controls.Add(this.TxtPassword);
             this.PnlNewPassword.Controls.Add(this.PbxPassword);
             this.PnlNewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlNewPassword.Location = new System.Drawing.Point(196, 330);
+            this.PnlNewPassword.Location = new System.Drawing.Point(261, 406);
+            this.PnlNewPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlNewPassword.Name = "PnlNewPassword";
-            this.PnlNewPassword.Size = new System.Drawing.Size(333, 39);
+            this.PnlNewPassword.Size = new System.Drawing.Size(444, 48);
             this.PnlNewPassword.TabIndex = 13;
             // 
             // chkShowPassword
@@ -171,9 +183,10 @@ namespace MarkCapturing.Views.Security
             this.chkShowPassword.AutoSize = true;
             this.chkShowPassword.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.chkShowPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.chkShowPassword.Location = new System.Drawing.Point(382, 11);
+            this.chkShowPassword.Location = new System.Drawing.Point(509, 14);
+            this.chkShowPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkShowPassword.Name = "chkShowPassword";
-            this.chkShowPassword.Size = new System.Drawing.Size(65, 23);
+            this.chkShowPassword.Size = new System.Drawing.Size(75, 25);
             this.chkShowPassword.TabIndex = 16;
             this.chkShowPassword.Text = "Show";
             this.chkShowPassword.UseVisualStyleBackColor = true;
@@ -184,9 +197,10 @@ namespace MarkCapturing.Views.Security
             this.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.TxtPassword.Location = new System.Drawing.Point(46, 13);
+            this.TxtPassword.Location = new System.Drawing.Point(61, 16);
+            this.TxtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(278, 17);
+            this.TxtPassword.Size = new System.Drawing.Size(290, 21);
             this.TxtPassword.TabIndex = 6;
             this.TxtPassword.UseSystemPasswordChar = true;
             this.TxtPassword.Click += new System.EventHandler(this.TxtPassword_Click);
@@ -194,18 +208,20 @@ namespace MarkCapturing.Views.Security
             // PbxPassword
             // 
             this.PbxPassword.Image = global::MarkCapturing.Properties.Resources.safety_security_unlock_icon_1320190938147203473;
-            this.PbxPassword.Location = new System.Drawing.Point(13, 8);
+            this.PbxPassword.Location = new System.Drawing.Point(17, 10);
+            this.PbxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbxPassword.Name = "PbxPassword";
-            this.PbxPassword.Size = new System.Drawing.Size(27, 24);
+            this.PbxPassword.Size = new System.Drawing.Size(36, 30);
             this.PbxPassword.TabIndex = 5;
             this.PbxPassword.TabStop = false;
             // 
             // PbxUsername
             // 
             this.PbxUsername.Image = global::MarkCapturing.Properties.Resources.user__24_;
-            this.PbxUsername.Location = new System.Drawing.Point(13, 11);
+            this.PbxUsername.Location = new System.Drawing.Point(17, 14);
+            this.PbxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbxUsername.Name = "PbxUsername";
-            this.PbxUsername.Size = new System.Drawing.Size(26, 24);
+            this.PbxUsername.Size = new System.Drawing.Size(35, 30);
             this.PbxUsername.TabIndex = 4;
             this.PbxUsername.TabStop = false;
             // 
@@ -215,9 +231,10 @@ namespace MarkCapturing.Views.Security
             this.PnlUsername.Controls.Add(this.LblUsername);
             this.PnlUsername.Controls.Add(this.PbxUsername);
             this.PnlUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PnlUsername.Location = new System.Drawing.Point(196, 279);
+            this.PnlUsername.Location = new System.Drawing.Point(261, 343);
+            this.PnlUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlUsername.Name = "PnlUsername";
-            this.PnlUsername.Size = new System.Drawing.Size(333, 45);
+            this.PnlUsername.Size = new System.Drawing.Size(444, 55);
             this.PnlUsername.TabIndex = 12;
             // 
             // LblUsername
@@ -225,9 +242,10 @@ namespace MarkCapturing.Views.Security
             this.LblUsername.AutoSize = true;
             this.LblUsername.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.LblUsername.Location = new System.Drawing.Point(45, 11);
+            this.LblUsername.Location = new System.Drawing.Point(60, 14);
+            this.LblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblUsername.Name = "LblUsername";
-            this.LblUsername.Size = new System.Drawing.Size(77, 19);
+            this.LblUsername.Size = new System.Drawing.Size(93, 21);
             this.LblUsername.TabIndex = 5;
             this.LblUsername.Text = "Username";
             // 
@@ -236,9 +254,10 @@ namespace MarkCapturing.Views.Security
             this.LblResetPasswordHeading.AutoSize = true;
             this.LblResetPasswordHeading.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblResetPasswordHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.LblResetPasswordHeading.Location = new System.Drawing.Point(191, 117);
+            this.LblResetPasswordHeading.Location = new System.Drawing.Point(255, 144);
+            this.LblResetPasswordHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblResetPasswordHeading.Name = "LblResetPasswordHeading";
-            this.LblResetPasswordHeading.Size = new System.Drawing.Size(166, 25);
+            this.LblResetPasswordHeading.Size = new System.Drawing.Size(216, 32);
             this.LblResetPasswordHeading.TabIndex = 5;
             this.LblResetPasswordHeading.Text = "Reset Password";
             // 
@@ -265,8 +284,9 @@ namespace MarkCapturing.Views.Security
             this.PnlRight.Controls.Add(this.PnlPassword);
             this.PnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlRight.Location = new System.Drawing.Point(0, 0);
+            this.PnlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlRight.Name = "PnlRight";
-            this.PnlRight.Size = new System.Drawing.Size(548, 500);
+            this.PnlRight.Size = new System.Drawing.Size(731, 615);
             this.PnlRight.TabIndex = 6;
             // 
             // label8
@@ -274,9 +294,10 @@ namespace MarkCapturing.Views.Security
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label8.Location = new System.Drawing.Point(24, 338);
+            this.label8.Location = new System.Drawing.Point(32, 416);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 21);
+            this.label8.Size = new System.Drawing.Size(155, 23);
             this.label8.TabIndex = 29;
             this.label8.Text = "New Password";
             // 
@@ -285,9 +306,10 @@ namespace MarkCapturing.Views.Security
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label7.Location = new System.Drawing.Point(24, 383);
+            this.label7.Location = new System.Drawing.Point(32, 471);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 21);
+            this.label7.Size = new System.Drawing.Size(184, 23);
             this.label7.TabIndex = 28;
             this.label7.Text = "Confirm Password";
             // 
@@ -296,9 +318,10 @@ namespace MarkCapturing.Views.Security
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label6.Location = new System.Drawing.Point(24, 290);
+            this.label6.Location = new System.Drawing.Point(32, 357);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 21);
+            this.label6.Size = new System.Drawing.Size(108, 23);
             this.label6.TabIndex = 27;
             this.label6.Text = "Username";
             // 
@@ -307,9 +330,10 @@ namespace MarkCapturing.Views.Security
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(118, 247);
+            this.label4.Location = new System.Drawing.Point(157, 304);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(312, 16);
+            this.label4.Size = new System.Drawing.Size(398, 19);
             this.label4.TabIndex = 26;
             this.label4.Text = "Make sure password is unique i.e add special characters";
             // 
@@ -318,9 +342,10 @@ namespace MarkCapturing.Views.Security
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(152, 220);
+            this.label1.Location = new System.Drawing.Point(203, 271);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 16);
+            this.label1.Size = new System.Drawing.Size(310, 19);
             this.label1.TabIndex = 25;
             this.label1.Text = "Password must be at least 8 characters long";
             // 
@@ -331,9 +356,10 @@ namespace MarkCapturing.Views.Security
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.BtnExit.Location = new System.Drawing.Point(282, 436);
+            this.BtnExit.Location = new System.Drawing.Point(376, 537);
+            this.BtnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(148, 35);
+            this.BtnExit.Size = new System.Drawing.Size(197, 43);
             this.BtnExit.TabIndex = 24;
             this.BtnExit.Text = "Exit ";
             this.BtnExit.UseVisualStyleBackColor = false;
@@ -344,9 +370,10 @@ namespace MarkCapturing.Views.Security
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label5.Location = new System.Drawing.Point(108, 37);
+            this.label5.Location = new System.Drawing.Point(144, 46);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 24);
+            this.label5.Size = new System.Drawing.Size(147, 33);
             this.label5.TabIndex = 23;
             this.label5.Text = "Capturing";
             // 
@@ -354,9 +381,10 @@ namespace MarkCapturing.Views.Security
             // 
             this.PbxLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.PbxLogo.Image = global::MarkCapturing.Properties.Resources.WCEDlogo;
-            this.PbxLogo.Location = new System.Drawing.Point(3, 3);
+            this.PbxLogo.Location = new System.Drawing.Point(4, 4);
+            this.PbxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbxLogo.Name = "PbxLogo";
-            this.PbxLogo.Size = new System.Drawing.Size(99, 85);
+            this.PbxLogo.Size = new System.Drawing.Size(132, 105);
             this.PbxLogo.TabIndex = 21;
             this.PbxLogo.TabStop = false;
             // 
@@ -365,9 +393,10 @@ namespace MarkCapturing.Views.Security
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label3.Location = new System.Drawing.Point(108, 13);
+            this.label3.Location = new System.Drawing.Point(144, 16);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 24);
+            this.label3.Size = new System.Drawing.Size(80, 33);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mark";
             // 
@@ -376,9 +405,10 @@ namespace MarkCapturing.Views.Security
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label2.Location = new System.Drawing.Point(108, 64);
+            this.label2.Location = new System.Drawing.Point(144, 79);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 24);
+            this.label2.Size = new System.Drawing.Size(107, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "System";
             // 
@@ -387,17 +417,19 @@ namespace MarkCapturing.Views.Security
             this.PnlPassword.BackColor = System.Drawing.SystemColors.Control;
             this.PnlPassword.Controls.Add(this.PbxUser);
             this.PnlPassword.Controls.Add(this.LblUserLoggedin);
-            this.PnlPassword.Location = new System.Drawing.Point(242, 12);
+            this.PnlPassword.Location = new System.Drawing.Point(323, 15);
+            this.PnlPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlPassword.Name = "PnlPassword";
-            this.PnlPassword.Size = new System.Drawing.Size(293, 37);
+            this.PnlPassword.Size = new System.Drawing.Size(391, 46);
             this.PnlPassword.TabIndex = 3;
             // 
             // PbxUser
             // 
             this.PbxUser.Image = global::MarkCapturing.Properties.Resources.user__24_;
-            this.PbxUser.Location = new System.Drawing.Point(3, 3);
+            this.PbxUser.Location = new System.Drawing.Point(4, 4);
+            this.PbxUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PbxUser.Name = "PbxUser";
-            this.PbxUser.Size = new System.Drawing.Size(25, 31);
+            this.PbxUser.Size = new System.Drawing.Size(33, 38);
             this.PbxUser.TabIndex = 4;
             this.PbxUser.TabStop = false;
             // 
@@ -406,19 +438,43 @@ namespace MarkCapturing.Views.Security
             this.LblUserLoggedin.AutoSize = true;
             this.LblUserLoggedin.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUserLoggedin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.LblUserLoggedin.Location = new System.Drawing.Point(34, 6);
+            this.LblUserLoggedin.Location = new System.Drawing.Point(45, 7);
+            this.LblUserLoggedin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblUserLoggedin.Name = "LblUserLoggedin";
-            this.LblUserLoggedin.Size = new System.Drawing.Size(0, 19);
+            this.LblUserLoggedin.Size = new System.Drawing.Size(0, 21);
             this.LblUserLoggedin.TabIndex = 1;
+            // 
+            // ChkShowPass
+            // 
+            this.ChkShowPass.AutoSize = true;
+            this.ChkShowPass.Location = new System.Drawing.Point(358, 16);
+            this.ChkShowPass.Name = "ChkShowPass";
+            this.ChkShowPass.Size = new System.Drawing.Size(64, 21);
+            this.ChkShowPass.TabIndex = 17;
+            this.ChkShowPass.Text = "Show";
+            this.ChkShowPass.UseVisualStyleBackColor = true;
+            this.ChkShowPass.CheckedChanged += new System.EventHandler(this.ChkShowPass_CheckedChanged);
+            // 
+            // ChkShowPass2
+            // 
+            this.ChkShowPass2.AutoSize = true;
+            this.ChkShowPass2.Location = new System.Drawing.Point(358, 16);
+            this.ChkShowPass2.Name = "ChkShowPass2";
+            this.ChkShowPass2.Size = new System.Drawing.Size(64, 21);
+            this.ChkShowPass2.TabIndex = 18;
+            this.ChkShowPass2.Text = "Show";
+            this.ChkShowPass2.UseVisualStyleBackColor = true;
+            this.ChkShowPass2.CheckedChanged += new System.EventHandler(this.ChkShowPass2_CheckedChanged);
             // 
             // FormResetPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 500);
+            this.ClientSize = new System.Drawing.Size(731, 615);
             this.ControlBox = false;
             this.Controls.Add(this.PnlRight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormResetPassword";
@@ -472,5 +528,7 @@ namespace MarkCapturing.Views.Security
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox ChkShowPass2;
+        private System.Windows.Forms.CheckBox ChkShowPass;
     }
 }

@@ -41,7 +41,10 @@ namespace MarkCapturing.Services
         }
         public bool IsResetPassword(string username)
         {
-            return GetUser(username).IsPasswordReset;
+            if (username != null)
+                return GetUser(username).IsPasswordReset;
+            else
+                return false;
         }
         public bool IsResetToken(string username,string enteredPassword)
         {

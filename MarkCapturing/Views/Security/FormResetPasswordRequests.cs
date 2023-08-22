@@ -23,6 +23,7 @@ namespace MarkCapturing.Views.Security
         {
             InitializeComponent();
             ResetPasswordPresenter = new ResetPasswordRequestPresenter(this);
+            PasswordRequestsClicked?.Invoke(this, EventArgs.Empty);
             LblUserLoggedin.Text = username;
         }
         public void ShowPasswordRequests(List<string> resetRequests)
@@ -82,12 +83,12 @@ namespace MarkCapturing.Views.Security
             bool enableReset = ChkResetPassword.Checked;
             BtnSave.Enabled = enableReset;
         }
-        // Event handler for the "Password Requests" button click event
-        private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
-        {
-            // Raise the PasswordRequestsClicked event when the button is clicked
-            PasswordRequestsClicked?.Invoke(this, EventArgs.Empty);
-        }
+        //// Event handler for the "Password Requests" button click event
+        //private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
+        //{
+        //    // Raise the PasswordRequestsClicked event when the button is clicked
+        //    PasswordRequestsClicked?.Invoke(this, EventArgs.Empty);
+        //}
         public string GetSelectedUsername()
         {
             return LstPasswordRequests.SelectedItem?.ToString();
@@ -121,16 +122,20 @@ namespace MarkCapturing.Views.Security
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
+            FormSecuritySystemParameters formSecuritySystemParameters = new FormSecuritySystemParameters();
+            Program.FormNavController.ShowForm(formSecuritySystemParameters);
         }
 
-        private void BtnResetPassword_Click(object sender, EventArgs e)
-        {
+        //private void BtnResetPassword_Click(object sender, EventArgs e)
+        //{
+        //    FormResetPassword formResetPassword = new FormResetPassword();
+        //    formResetPassword.Show();
+        //}
 
-        }
-
-        private void BtnRegisterNewUser_Click(object sender, EventArgs e)
-        {
-
-        }
+        //private void BtnRegisterNewUser_Click(object sender, EventArgs e)
+        //{
+        //    FormRegister formRegister = new FormRegister();
+        //    Program.FormNavController.ShowForm(formRegister);
+        //}
     }
 }

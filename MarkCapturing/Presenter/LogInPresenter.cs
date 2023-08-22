@@ -15,6 +15,7 @@ namespace MarkCapturing.Presenter
     {
         private readonly ILoginView loginView;
         private readonly AuthenticationService authenticationService;
+        private readonly TempPasswordHelper tempPasswordHelper;
         private readonly AssigningRolesService rolesService;
         private readonly NSC_VraagpunteStelselEntities dbContext;
 
@@ -28,6 +29,7 @@ namespace MarkCapturing.Presenter
             rolesService = new AssigningRolesService();
             authenticationService = new AuthenticationService();
             dbContext = new NSC_VraagpunteStelselEntities();
+            tempPasswordHelper = new TempPasswordHelper();
             PopulateDropdown();
 
             // Subscribe to the ForgotPasswordClicked event
@@ -74,10 +76,6 @@ namespace MarkCapturing.Presenter
         {
             return authenticationService.IsResetToken(loginView.Username, loginView.Password);
         }
-        //public bool Update()
-        //{
-        //    return authenticationService.IsUpdated(loginView.Username);
-        //}
         public bool Delete()
         {
             return authenticationService.IsResetRequestDeleted(loginView.Username);
@@ -85,6 +83,8 @@ namespace MarkCapturing.Presenter
        
         public void OnLoginButtonClicked()
         {
+            DataStorage.Role = Roles();
+            DataStorage.UserLoggedIn = Username;
             //We need to check if the entered username has requested a login or not
             if (authenticationService.IsResetPassword(loginView.Username))
             {
@@ -126,7 +126,7 @@ namespace MarkCapturing.Presenter
 
         public string GenerateTempPassword()
         {
-            return GenerateTempPassword();
+            return tempPasswordHelper.GenerateTempPassword();
         }
     }
 }

@@ -10,24 +10,22 @@ namespace MarkCapturing.Views
     public partial class FormMenu : Form, IMenuView
     {
         private readonly MenuPresenter _presenter;
-        private readonly ILoginView loginView;
-        public string Username => loginView.Username;
+        public string Username => DataStorage.UserLoggedIn;
+        public string Role=>DataStorage.Role;
 
-        public string Role => loginView.Role;
-
-        public FormMenu(ILoginView _loginView)
+        public FormMenu()
         {
             InitializeComponent();
-            loginView = _loginView;
             _presenter = new MenuPresenter(this);
-            LblUserLoggedin.Text = loginView.Username;
+            LblUserLoggedin.Text = Username;
         }
         private void BtnSecurity_Click(object sender, EventArgs e)
         {
             //FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests(Username);
             //formResetPasswordRequests.Show();
-            FormSecuritySystemParameters formResetPassword = new FormSecuritySystemParameters(this);
-            formResetPassword.Show();
+            FormSecuritySystemParameters formResetPassword = new FormSecuritySystemParameters();
+            Program.FormNavController.ShowForm(formResetPassword);
+            //formResetPassword.Show();
         }
 
         private void BtnReports_Click(object sender, EventArgs e)

@@ -457,6 +457,7 @@
     <Compile Include="Interfaces\IResetRequestsRepositories.cs" />
     <Compile Include="Interfaces\IUserDataAccess.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\IRolesRepository.cs" />
     <Compile Include="Intervalle.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
@@ -478,8 +479,10 @@
     <Compile Include="Puntestate.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\LoginRepository.cs" />
     <Compile Include="Repositories\ResetPasswordRepository.cs" />
     <Compile Include="Repositories\ResetRequestRepository.cs" />
+    <Compile Include="Repositories\RolesRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\MarksheetRepository.cs" />
     <Compile Include="Role.cs">

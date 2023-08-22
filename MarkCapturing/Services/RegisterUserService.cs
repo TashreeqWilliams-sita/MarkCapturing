@@ -1,4 +1,5 @@
 ﻿using DataAccessLibrary;
+using DataAccessLibrary.Interfaces;
 using DataAccessLibrary.Repositories;
 using MarkCapturing.Views.Interfaces;
 using System;
@@ -12,9 +13,11 @@ namespace MarkCapturing.Services
     public class RegisterUserService
     {
         private readonly UserRepository userRepository;
+        private readonly IRolesRepository rolesRepository;
         public RegisterUserService()
         {
             userRepository = new UserRepository();
+            rolesRepository = new RolesRepository();
         }
 
         public bool UserExists(string username)//Check if user exists
@@ -26,7 +29,7 @@ namespace MarkCapturing.Services
         }
         public List<string> GetListOfRoles()
         {
-            return userRepository.GetAllRoles().Select(r => r.RoleName).ToList();
+            return rolesRepository.GetAllRoles().Select(r => r.RoleName).ToList();
             //return userRepository.GetAllRoleNames();
         }
         public bool IsUserRegistered(string Username, string Password, string IDNumber, short Level, Guid guid)

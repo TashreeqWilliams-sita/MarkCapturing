@@ -11,9 +11,11 @@ namespace MarkCapturing.Services
     public class AssigningRolesService
     {
         private readonly IUserRepository userRepository;
+        private readonly IRolesRepository rolesRepository;
         public AssigningRolesService()
         {
             userRepository = new UserRepository();
+            rolesRepository = new RolesRepository();
         }
         private User GetUser(string username)
         {
@@ -24,7 +26,7 @@ namespace MarkCapturing.Services
             User user = GetUser(username);
             if (user != null)
             {
-                List<string> roles = userRepository.GetAllRoleNames();
+                List<string> roles = rolesRepository.GetAllRoleNames();
                 if (user.Level == 7)
                 {
                     return user.Role = roles.Find(r => r == "Supervisor");

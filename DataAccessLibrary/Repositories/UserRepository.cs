@@ -16,22 +16,9 @@ namespace DataAccessLibrary.Repositories
         {
             return dbContext.Users.ToList();
         }
-        //public List<string> GetListOfUsernames()
-        //{
-        //    return GetAllUsers().Select(u => u.UserName).ToList();
-        //}
         public User GetUserByUsername(string username)
         {
             return dbContext.Users.FirstOrDefault(u => u.UserName == username);
-        }
-        public List<Role> GetAllRoles()
-        {
-            return dbContext.Roles.ToList();
-            //return dbContext.Roles.Select(r => r.RoleName).ToList();
-        }
-        public List<string> GetAllRoleNames()
-        {
-            return dbContext.Roles.Select(r => r.RoleName).ToList();
         }
 
         public bool AssignUserRole(string username, string roleName)
