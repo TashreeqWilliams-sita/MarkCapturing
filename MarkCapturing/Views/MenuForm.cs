@@ -76,7 +76,7 @@ namespace MarkCapturing.Views
 
         private void BtnUpdateQuestionMarks_Click(object sender, EventArgs e)
         {
-            UpdateQuestionMarksForm updateForm = new UpdateQuestionMarksForm();
+            UpdateQuestionMarksForm updateForm = new UpdateQuestionMarksForm(this);
             updateForm.Show();
         }
 

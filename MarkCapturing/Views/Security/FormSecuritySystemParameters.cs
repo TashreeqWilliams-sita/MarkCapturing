@@ -14,7 +14,7 @@ using DataAccessLibrary.Interfaces;
 
 namespace MarkCapturing.Views
 {
-    public partial class FormSecuritySystemParameters : Form, ISystemSecurityView
+    public partial class FormSecuritySystemParameters : Form, DataAccessLibrary.Interfaces.IUpdateQuestionMarksView
     {
         private readonly IMenuView menuView;
         public FormSecuritySystemParameters(IMenuView _menuView)

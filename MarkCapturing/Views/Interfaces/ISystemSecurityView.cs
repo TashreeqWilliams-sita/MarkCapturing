@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLibrary.Interfaces
 {
-    public interface ISystemSecurityView
+    public interface IUpdateQuestionMarksView
     {
         string Username { get; }
     }

@@ -1,4 +1,4 @@
-﻿using MarkCapturing.Views;
+﻿ using MarkCapturing.Views;
 using DataAccessLibrary.Interfaces;
 using DataAccessLibrary.Repositories;
 using DataAccessLibrary;

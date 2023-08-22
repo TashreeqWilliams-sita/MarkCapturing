@@ -102,7 +102,7 @@ namespace MarkCapturing.Views
             this.BtnUpdateQuestion.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUpdateQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.BtnUpdateQuestion.Location = new System.Drawing.Point(24, 198);
-            this.BtnUpdateQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnUpdateQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdateQuestion.Name = "BtnUpdateQuestion";
             this.BtnUpdateQuestion.Size = new System.Drawing.Size(519, 43);
             this.BtnUpdateQuestion.TabIndex = 5;
@@ -116,7 +116,7 @@ namespace MarkCapturing.Views
             this.PnlPassword.Controls.Add(this.PbxUser);
             this.PnlPassword.Controls.Add(this.LblUserLoggedin);
             this.PnlPassword.Location = new System.Drawing.Point(0, 0);
-            this.PnlPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlPassword.Margin = new System.Windows.Forms.Padding(4);
             this.PnlPassword.Name = "PnlPassword";
             this.PnlPassword.Size = new System.Drawing.Size(600, 53);
             this.PnlPassword.TabIndex = 3;
@@ -125,7 +125,7 @@ namespace MarkCapturing.Views
             // 
             this.PbxUser.Image = global::MarkCapturing.Properties.Resources.user__24_;
             this.PbxUser.Location = new System.Drawing.Point(8, 10);
-            this.PbxUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PbxUser.Margin = new System.Windows.Forms.Padding(4);
             this.PbxUser.Name = "PbxUser";
             this.PbxUser.Size = new System.Drawing.Size(44, 34);
             this.PbxUser.TabIndex = 4;
@@ -251,7 +251,7 @@ namespace MarkCapturing.Views
             this.PnlRight.Controls.Add(this.PnlPassword);
             this.PnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlRight.Location = new System.Drawing.Point(400, 0);
-            this.PnlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlRight.Margin = new System.Windows.Forms.Padding(4);
             this.PnlRight.Name = "PnlRight";
             this.PnlRight.Size = new System.Drawing.Size(574, 542);
             this.PnlRight.TabIndex = 3;
@@ -276,7 +276,7 @@ namespace MarkCapturing.Views
             this.BtnExit.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.BtnExit.Location = new System.Drawing.Point(24, 350);
-            this.BtnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(519, 43);
             this.BtnExit.TabIndex = 19;
@@ -292,7 +292,7 @@ namespace MarkCapturing.Views
             this.BtnSecurity.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSecurity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.BtnSecurity.Location = new System.Drawing.Point(24, 299);
-            this.BtnSecurity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSecurity.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSecurity.Name = "BtnSecurity";
             this.BtnSecurity.Size = new System.Drawing.Size(519, 43);
             this.BtnSecurity.TabIndex = 18;
@@ -308,7 +308,7 @@ namespace MarkCapturing.Views
             this.BtnReports.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.BtnReports.Location = new System.Drawing.Point(24, 249);
-            this.BtnReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnReports.Margin = new System.Windows.Forms.Padding(4);
             this.BtnReports.Name = "BtnReports";
             this.BtnReports.Size = new System.Drawing.Size(519, 43);
             this.BtnReports.TabIndex = 17;
@@ -330,7 +330,7 @@ namespace MarkCapturing.Views
             this.PnlLeft.Controls.Add(this.PbxLogo);
             this.PnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlLeft.Location = new System.Drawing.Point(0, 0);
-            this.PnlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlLeft.Margin = new System.Windows.Forms.Padding(4);
             this.PnlLeft.Name = "PnlLeft";
             this.PnlLeft.Size = new System.Drawing.Size(400, 542);
             this.PnlLeft.TabIndex = 2;
@@ -339,7 +339,7 @@ namespace MarkCapturing.Views
             // 
             this.PbxLogo.Image = global::MarkCapturing.Properties.Resources.WCEDlogo;
             this.PbxLogo.Location = new System.Drawing.Point(16, 34);
-            this.PbxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PbxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.PbxLogo.Name = "PbxLogo";
             this.PbxLogo.Size = new System.Drawing.Size(132, 105);
             this.PbxLogo.TabIndex = 0;
@@ -354,7 +354,7 @@ namespace MarkCapturing.Views
             this.Controls.Add(this.PnlRight);
             this.Controls.Add(this.PnlLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Menu";

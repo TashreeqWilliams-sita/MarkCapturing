@@ -47,7 +47,8 @@ namespace MarkCapturing.Views
 
         private void BtnUpdateQuestion_Click(object sender, EventArgs e)
         {
-
+            UpdateQuestionMarksForm updateQuestionMarksForm = new UpdateQuestionMarksForm(this);
+            updateQuestionMarksForm.Show();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

@@ -59,6 +59,7 @@
     <Compile Include="Presenter\IResetPasswordPresenter.cs" />
     <Compile Include="Presenter\IResetPasswordRequestPresenter.cs" />
     <Compile Include="Presenter\LogInPresenter.cs" />
+    <Compile Include="Presenter\UpdateQuestionsMenuPresenter.cs" />
     <Compile Include="Presenter\MenuPresenter.cs" />
     <Compile Include="Presenter\RegisterPresenter.cs" />
     <Compile Include="Presenter\ResetPasswordPresenter.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Views\Interfaces\IResetPasswordView.cs" />
     <Compile Include="Views\Interfaces\IResetRequestView.cs" />
     <Compile Include="Views\Interfaces\ISystemSecurityView.cs" />
+    <Compile Include="Views\Interfaces\IUpdateQuestionMarksView.cs" />
     <Compile Include="Views\Interfaces\IUpdateQuestionsView.cs" />
     <Compile Include="Views\Security\FormResetPassword.cs">
       <SubType>Form</SubType>
@@ -155,7 +157,7 @@
     <Compile Include="Views\FormsBasedOnRoles\FormVerifier.Designer.cs">
       <DependentUpon>FormVerifier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IUpdatingMarksView.cs" />
+    <Compile Include="Views\Interfaces\IUpdatingMarksView.cs" />
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
