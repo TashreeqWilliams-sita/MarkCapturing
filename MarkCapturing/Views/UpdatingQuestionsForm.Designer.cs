@@ -79,7 +79,7 @@ namespace MarkCapturing.Views
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(584, 300);
             this.tableLayoutPanel.TabIndex = 15;
-            this.tableLayoutPanel.Visible = false;
+            //this.tableLayoutPanel.Visible = false;
             // 
             // btnShowMarksheetNumber
             // 

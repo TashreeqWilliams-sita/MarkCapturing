@@ -43,7 +43,7 @@ namespace DataAccessLibrary.Repositories
         {
             var ScoresheetRecords = (from p in dbContext.EKS_PUNTESTATE
                                      join v in dbContext.Vraagleers on p.PS_VAKKODE equals v.Vakkode
-                                     where p.PS_Msheet == marksheetnumber
+                                     where p.PS_Msheet == marksheetnumber && p.PS_VRSTEL_NO == v.VraestelNommer 
                                      select new Scoresheets
                                      {
                                          MarksheetNumber = p.PS_Msheet,

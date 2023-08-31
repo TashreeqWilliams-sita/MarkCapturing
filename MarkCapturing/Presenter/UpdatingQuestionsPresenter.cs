@@ -60,10 +60,10 @@ namespace MarkCapturing.Presenter
             return marksheetRepository.CheckMarksheetNumber(MarksheetNo);
         }
         #endregion
-        //public void SaveMarks(string subcode, string marks)
-        //{
-        //    marksheetRepository.SaveMarks(subcode, marks);
-        //}
+        public void SaveMarks(string subcode, string marks)
+        {
+            marksheetRepository.SaveMarks(subcode, marks);
+        }
 
         //private List<Scoresheets> RetrieveRecords(string MarksheetNo)
         //{

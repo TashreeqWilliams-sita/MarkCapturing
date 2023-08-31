@@ -23,6 +23,8 @@ namespace MarkCapturing.Views
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+
+
         public void ShowListScoresheet(List<Scoresheets> ScoresheetList)
         {
 
@@ -593,20 +595,20 @@ namespace MarkCapturing.Views
 //#endregion
 #region SaveMarks
 //Saving the marks, still need some updating
-//private void txtQuestionMark_KeyDown(object sender, KeyEventArgs e)
+//
 //{
 //    if (e.KeyCode == Keys.Enter)
 //    {
 //        TextBox txtQuestionMark = (TextBox)sender;
 //        string subjectCode = txtQuestionMark.Tag as string;//This means we need a subject code stored in the Tag property, when we create our textboxes 
-//        if (txtQuestionMark.Text.Trim()!=""&&subjectCode!=null)
+//        if (txtQuestionMark.Text.Trim() != "" && subjectCode != null)
 //        {
 //            string QMark = txtQuestionMark.Text;
 //            Updatepresenter.SaveMarks(subjectCode, QMark);
 //            MessageBox.Show($"Marks for subject {subjectCode} saved successfully");
 
 //            //clear textboxes after saving grade
-//            txtQuestionMark.Clear();  
+//            txtQuestionMark.Clear();
 //        }
 //        else
 //        {
@@ -615,5 +617,6 @@ namespace MarkCapturing.Views
 //        e.Handled = true;
 //        e.SuppressKeyPress = true;
 //    }
+
 //}
 #endregion

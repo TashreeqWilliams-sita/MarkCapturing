@@ -14,5 +14,7 @@ namespace DataAccessLibrary
         public short? PaperNumberPunte { get; set; }
         public short? NumberOfQuestions { get; set; }
         public string ID_NO { get; set; }
+       
+        
     }
 }
