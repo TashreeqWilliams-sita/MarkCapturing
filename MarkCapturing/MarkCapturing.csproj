@@ -55,7 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStorage.cs" />
     <Compile Include="Helpers\EncryptionHelper.cs" />
+    <Compile Include="Helpers\TempPasswordHelper.cs" />
+    <Compile Include="Presenter\FormNavigationController.cs" />
+    <Compile Include="Presenter\ILoginPresenter.cs" />
     <Compile Include="Presenter\IResetPasswordPresenter.cs" />
     <Compile Include="Presenter\IResetPasswordRequestPresenter.cs" />
     <Compile Include="Presenter\LogInPresenter.cs" />

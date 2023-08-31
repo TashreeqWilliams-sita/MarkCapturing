@@ -19,21 +19,12 @@ namespace MarkCapturing.Views.Security
         public event EventHandler PasswordRequestsClicked;
         public event EventHandler SaveClicked;
 
-        public FormResetPasswordRequests()
+        public FormResetPasswordRequests(string username)
         {
             InitializeComponent();
             ResetPasswordPresenter = new ResetPasswordRequestPresenter(this);
-        }
-        private void LstPasswordRequests_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Get the selected username from the list box
-            string selectedUsername = LstPasswordRequests.SelectedItem.ToString();
-
-            // Enable the password reset checkbox
-            EnablePasswordReset(true);
-
-            // Show the selected user's details
-            //ShowSelectedUserDetails(selectedUsername);
+            PasswordRequestsClicked?.Invoke(this, EventArgs.Empty);
+            LblUserLoggedin.Text = username;
         }
         public void ShowPasswordRequests(List<string> resetRequests)
         {
@@ -92,12 +83,12 @@ namespace MarkCapturing.Views.Security
             bool enableReset = ChkResetPassword.Checked;
             BtnSave.Enabled = enableReset;
         }
-        // Event handler for the "Password Requests" button click event
-        private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
-        {
-            // Raise the PasswordRequestsClicked event when the button is clicked
-            PasswordRequestsClicked?.Invoke(this, EventArgs.Empty);
-        }
+        //// Event handler for the "Password Requests" button click event
+        //private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
+        //{
+        //    // Raise the PasswordRequestsClicked event when the button is clicked
+        //    PasswordRequestsClicked?.Invoke(this, EventArgs.Empty);
+        //}
         public string GetSelectedUsername()
         {
             return LstPasswordRequests.SelectedItem?.ToString();
@@ -112,5 +103,39 @@ namespace MarkCapturing.Views.Security
         {
             SaveClicked?.Invoke(this, EventArgs.Empty);
         }
+
+        public void Clear(string username)
+        {
+            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(LstPasswordRequests);
+            selectedItems = LstPasswordRequests.SelectedItems;
+
+            if (LstPasswordRequests.SelectedIndex != -1)
+            {
+                for (int i = selectedItems.Count - 1; i >= 0; i--)
+                    LstPasswordRequests.Items.Remove(selectedItems[i]);
+            }
+            else
+                MessageBox.Show("Couldn't clear");
+            //LstPasswordRequests.ClearSelected();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormSecuritySystemParameters formSecuritySystemParameters = new FormSecuritySystemParameters();
+            Program.FormNavController.ShowForm(formSecuritySystemParameters);
+        }
+
+        //private void BtnResetPassword_Click(object sender, EventArgs e)
+        //{
+        //    FormResetPassword formResetPassword = new FormResetPassword();
+        //    formResetPassword.Show();
+        //}
+
+        //private void BtnRegisterNewUser_Click(object sender, EventArgs e)
+        //{
+        //    FormRegister formRegister = new FormRegister();
+        //    Program.FormNavController.ShowForm(formRegister);
+        //}
     }
 }

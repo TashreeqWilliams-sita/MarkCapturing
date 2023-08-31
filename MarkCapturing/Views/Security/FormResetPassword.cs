@@ -16,21 +16,19 @@ namespace MarkCapturing.Views.Security
 {
     public partial class FormResetPassword : Form, IResetPasswordView
     {
-        private readonly AuthenticationService authenticationService;
-        private readonly ResetPasswordPresenter resetPasswordPresenter;
-
+        private ResetPasswordPresenter ResetPasswordPresenter;
         public event EventHandler ResetPasswordClicked;
         public event EventHandler ExitClicked;
-        private string userName;
+        private string LoggedInUser = DataStorage.UserLoggedIn;
 
         public string Username 
         {
-            get { return userName; }
+            get { return LoggedInUser; }
             set 
             {
                 if (value != null)
                 {
-                    userName = value;
+                    LoggedInUser = value;
                 }
                 else
                 {
@@ -69,15 +67,15 @@ namespace MarkCapturing.Views.Security
             }
         }
 
-        public FormResetPassword(string username)
+        public FormResetPassword()
         {
-            userName = username;
             InitializeComponent();
-            LblUserLoggedin.Text = Username;
+            LblUserLoggedin.Text = LoggedInUser;
             PnlUsername.BackColor = SystemColors.Control;
-            //BtnResetPassword.Enabled = false;
-            authenticationService = new AuthenticationService();
-            resetPasswordPresenter = new ResetPasswordPresenter(this);
+            LblUsername.Text = Username;
+            ////BtnResetPassword.Enabled = false;
+            //authenticationService = new AuthenticationService();
+            ResetPasswordPresenter = new ResetPasswordPresenter(this);
         }
 
         private void TxtPassword_Click(object sender, EventArgs e)
@@ -123,12 +121,24 @@ namespace MarkCapturing.Views.Security
 
         public void Exit()
         {
-            Application.Exit();
+            Close();
+            FormSecuritySystemParameters formSecuritySystemParameters = new FormSecuritySystemParameters();
+            Program.FormNavController.ShowForm(formSecuritySystemParameters);
         }
 
         private void BtnResetPassword_Click(object sender, EventArgs e)
         {
             ResetPasswordClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void ChkShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            _ = ChkShowPass.Checked ? TxtPassword.UseSystemPasswordChar = false : TxtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void ChkShowPass2_CheckedChanged(object sender, EventArgs e)
+        {
+            _ = ChkShowPass2.Checked ? TxtConfirmPassword.UseSystemPasswordChar = false : TxtConfirmPassword.UseSystemPasswordChar = true;
         }
     }
 }

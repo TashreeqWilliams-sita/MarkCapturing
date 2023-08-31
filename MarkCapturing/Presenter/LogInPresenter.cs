@@ -3,6 +3,7 @@ using MarkCapturing.Services;
 using System.Linq;
 using MarkCapturing.Views.Interfaces;
 using DataAccessLibrary;
+using MarkCapturing.Helpers;
 using DataAccessLibrary.Repositories;
 using System.Collections.Generic;
 using System;
@@ -10,19 +11,25 @@ using System.Windows.Forms;
 
 namespace MarkCapturing.Presenter
 {
-    public class LogInPresenter
+    public class LogInPresenter: ILoginPresenter
     {
         private readonly ILoginView loginView;
         private readonly AuthenticationService authenticationService;
+        private readonly TempPasswordHelper tempPasswordHelper;
         private readonly AssigningRolesService rolesService;
         private readonly NSC_VraagpunteStelselEntities dbContext;
+
+        public event EventHandler ForgotPasswordClicked;
+
+        public string Username => loginView.Username;
 
         public LogInPresenter(ILoginView view)
         {
             loginView = view;
             rolesService = new AssigningRolesService();
             authenticationService = new AuthenticationService();
-            //dbContext = new NSC_VraagpunteStelselEntities();
+            dbContext = new NSC_VraagpunteStelselEntities();
+            tempPasswordHelper = new TempPasswordHelper();
             PopulateDropdown();
 
             // Subscribe to the ForgotPasswordClicked event
@@ -41,7 +48,7 @@ namespace MarkCapturing.Presenter
 
             if (role != "Admin" && role != "Supervisor")
             {
-                string resetToken = GenerateResetToken();
+                string tempPassword = GenerateTempPassword();
 
                 DateTime resetTokenExpiry = DateTime.Now.AddDays(1);
 
@@ -50,7 +57,7 @@ namespace MarkCapturing.Presenter
                 {
                     UserName = username,
                     RequestDateTime = DateTime.Now,
-                    ResetToken = resetToken,
+                    ResetToken = tempPassword,
                     ResetTokenExpiry = resetTokenExpiry
                 };
 
@@ -61,13 +68,6 @@ namespace MarkCapturing.Presenter
                 loginView.ShowSuccess("Your password reset request has been received. Please wait for further instructions.");
             }
         }
-        private string GenerateResetToken()
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            var random = new Random();
-            var token = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray());
-            return token;
-        }
         public bool CheckPasswordReset()
         {
             return authenticationService.IsResetPassword(loginView.Username);
@@ -76,10 +76,6 @@ namespace MarkCapturing.Presenter
         {
             return authenticationService.IsResetToken(loginView.Username, loginView.Password);
         }
-        //public bool Update()
-        //{
-        //    return authenticationService.IsUpdated(loginView.Username);
-        //}
         public bool Delete()
         {
             return authenticationService.IsResetRequestDeleted(loginView.Username);
@@ -87,6 +83,8 @@ namespace MarkCapturing.Presenter
        
         public void OnLoginButtonClicked()
         {
+            DataStorage.Role = Roles();
+            DataStorage.UserLoggedIn = Username;
             //We need to check if the entered username has requested a login or not
             if (authenticationService.IsResetPassword(loginView.Username))
             {
@@ -125,8 +123,10 @@ namespace MarkCapturing.Presenter
         {
             return rolesService.AssignRoles(loginView.Username);
         }
-        private void BtnForgetPassword_Click(object sender, EventArgs e)
+
+        public string GenerateTempPassword()
         {
+            return tempPasswordHelper.GenerateTempPassword();
         }
     }
 }

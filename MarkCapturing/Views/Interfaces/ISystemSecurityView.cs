@@ -8,6 +8,6 @@ namespace DataAccessLibrary.Interfaces
 {
     public interface IUpdateQuestionMarksView
     {
-        string Username { get; }
+        //string Username { get; }
     }
 }

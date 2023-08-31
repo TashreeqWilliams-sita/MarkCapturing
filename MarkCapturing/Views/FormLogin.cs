@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataAccessLibrary.Interfaces;
 using MarkCapturing.Presenter;
 using MarkCapturing.Views.Interfaces;
 using MarkCapturing.Views.Security;
@@ -79,9 +73,9 @@ namespace MarkCapturing.Views
         }
         public void ShowForm()
         {
-            FormMenu formMenu = new FormMenu(this);
-            formMenu.GetForm();
-            this.Hide();
+            FormMenu formMenu = new FormMenu();
+            Program.FormNavController.ShowForm(formMenu);
+            //this.Hide();
         }
 
         public void ShowLoginError()
@@ -146,7 +140,7 @@ namespace MarkCapturing.Views
 
         public Form ShowResetPasswordForm()
         {
-            FormResetPassword resetPasswordForm = new FormResetPassword(Username);
+            FormResetPassword resetPasswordForm = new FormResetPassword();
             return resetPasswordForm;
         }
 
@@ -155,7 +149,5 @@ namespace MarkCapturing.Views
             ComboBoxUsernames.Items.Clear();
             ComboBoxUsernames.Items.AddRange(usernames.ToArray());
         }
-
-        //Abrahams, Bilqees
     }
 }

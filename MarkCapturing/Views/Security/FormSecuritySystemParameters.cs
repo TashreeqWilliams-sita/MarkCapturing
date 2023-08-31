@@ -16,38 +16,39 @@ namespace MarkCapturing.Views
 {
     public partial class FormSecuritySystemParameters : Form, DataAccessLibrary.Interfaces.IUpdateQuestionMarksView
     {
-        private readonly IMenuView menuView;
-        public FormSecuritySystemParameters(IMenuView _menuView)
+        public string Username = DataStorage.UserLoggedIn;
+        public FormSecuritySystemParameters()
         {
             InitializeComponent();
-            menuView = _menuView;
             LblUserLoggedin.Text = Username;
         }
-
-        public string Username => menuView.Username;
-
+        
         private void BtnResetPasswordRequest_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests();
-            formResetPasswordRequests.Show();
+            //Hide();
+            FormResetPasswordRequests formResetPasswordRequests = new FormResetPasswordRequests(Username);
+            Program.FormNavController.ShowForm(formResetPasswordRequests);
+            //formResetPasswordRequests.Show();
         }
 
         private void BtnResetPassword_Click(object sender, EventArgs e)
         {
-            FormResetPassword formResetPassword = new FormResetPassword(Username);
-            formResetPassword.Show();
+            FormResetPassword formResetPassword = new FormResetPassword();
+            Program.FormNavController.ShowForm(formResetPassword);
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FormMenu formMenu = new FormMenu();
+            Program.FormNavController.ShowForm(formMenu);
+            //Close();
         }
 
         private void BtnRegisterNewUser_Click(object sender, EventArgs e)
         {
             FormRegister formRegister = new FormRegister();
-            formRegister.Show();
+            Program.FormNavController.ShowForm(formRegister);
+            //formRegister.Show();
         }
     }
 }

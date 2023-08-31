@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLibrary.Interfaces
 {
-    public interface IRegisterNewUser
+    public interface IRolesRepository
     {
+        List<Role> GetAllRoles();
+        List<string> GetAllRoleNames();
     }
 }

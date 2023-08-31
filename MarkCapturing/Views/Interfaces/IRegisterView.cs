@@ -12,13 +12,11 @@ namespace MarkCapturing.Views.Interfaces
         event EventHandler ButtonRegisterClicked;
         string Username { get; set; }
         string UserPassword { get; set; }
-        //int? UserLevel { get; set; }
+        short UserLevel { get; set; }
         string UserIDNumber { get; set; }
-        string SelectedRole { get; }
-        //List<string> GetListOfRoles();
-        //User User { get; set; }
-        //void RegisterUser();
+        string SelectedRole { get; set; }
         void ShowMessage(string msg);
+        void ClearControls();
         void PopulateDropdown(List<string> Roles);
 
 
