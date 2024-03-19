@@ -1,4 +1,5 @@
 ﻿using DataAccessLibrary;
+using DTOs;
 using MarkCapturing.Presenter;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,16 @@ namespace MarkCapturing.Views
     {
         private UpdatingQuestionsPresenter QuestionsPresenter;
         public string MarksheetNumber => txtMarksheetNumber.Text.Trim();
+
+       
         public UpdatingQuestionsForm()
         {
             InitializeComponent();
             QuestionsPresenter = new UpdatingQuestionsPresenter(this);
+
+            //selected exam number
+           
+
 
         }
 
@@ -25,78 +32,67 @@ namespace MarkCapturing.Views
 
 
 
-        public void ShowListScoresheet(List<Scoresheets> ScoresheetList)
+        public void ShowListScoresheet(MarksheetDTO ScoresheetList)
         {
+            //// Validate that eksamen and vraestelKode are not null
+            //if (string.IsNullOrEmpty(selectedEksamen) || string.IsNullOrEmpty(selectedVraestelKode))
+            //{
+            //    // Handle the case where eksamen or vraestelKode is null
+            //    return;
+            //}
+            //vraagleerDTO = presenter.GetQuestionPaperDetails(selectedEksamen, selectedVraestelKode);
 
-            // Suspend layout while adding controls
-            tableLayoutPanel.SuspendLayout();
+            //for (int i = 1; i <= 30; i++)
+            //{
+            //    TextBox questionTextBox = Controls.Find($"question{i}", true).FirstOrDefault() as TextBox;
+            //    TextBox maxMarkTextBox = Controls.Find($"VraagMaks{i}", true).FirstOrDefault() as TextBox;
+            //    CheckBox telVirVraestelMaksCheckbox = Controls.Find($"TelVirVraestelMaks{i}", true).FirstOrDefault() as CheckBox;
 
-            // Clear any existing controls in the table layout panel
-            tableLayoutPanel.Controls.Clear();
-            tableLayoutPanel.RowStyles.Clear();
-            tableLayoutPanel.ColumnStyles.Clear();
-            tableLayoutPanel.RowCount = 0;
-            tableLayoutPanel.ColumnCount = 5;
+            //    if (i <= vraagleerDTO.GetalVraeOpVraestel)
+            //    {
+            //        questionTextBox.Enabled = true;
+            //        maxMarkTextBox.Enabled = true;
+            //        telVirVraestelMaksCheckbox.Enabled = true;
+            //    }
+            //    else
+            //    {
+            //        questionTextBox.Enabled = false;
+            //        maxMarkTextBox.Enabled = false;
+            //        telVirVraestelMaksCheckbox.Enabled = false;
+            //    }
 
-            Label lblHeading = new Label();
-            lblHeading.Text = "Mark Details";
-            lblHeading.Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Bold);
-            lblHeading.Padding = new Padding(0, 0, 0, 1);
-            tableLayoutPanel.Controls.Add(lblHeading, 0, 0);
-            tableLayoutPanel.SetColumnSpan(lblHeading, 5);
+            //    // Retrieve the VraagNaam and VraagMak values from the details object (VraagleerDTO)
+            //    string vraagNaam = vraagleerDTO?.GetType().GetProperty($"VraagNaam{i}")?.GetValue(vraagleerDTO) as string;
+            //    bool telVirVraestelMaks = (bool)vraagleerDTO?.GetType().GetProperty($"TelVirVraestelMaks{i}")?.GetValue(vraagleerDTO);
+            //    float? vraagMaksValue = vraagleerDTO?.GetType().GetProperty($"VraagMaks{i}")?.GetValue(vraagleerDTO) as float?;
+            //    string vraagMaks = vraagMaksValue.HasValue ? vraagMaksValue.Value.ToString() : string.Empty;
 
-            int row = 1;
-            int column = 0;
-            int NumOfQ = 0;
-            int i = 0;
+            //    questionTextBox.Text = vraagNaam ?? ""; // Use null-conditional operator to handle null values
+            //    maxMarkTextBox.Text = vraagMaks.ToString() ?? "";
+            //    telVirVraestelMaksCheckbox.Checked = telVirVraestelMaks;
 
-            if (i < ScoresheetList.Count)
-            {
-                if (ScoresheetList[i].PaperNumber == ScoresheetList[i].PaperNumberPunte)
-                {
-                    NumOfQ = (int)ScoresheetList[i].NumberOfQuestions;
-                }
+            //    //questionTextBox.Enabled = true;
+            //    //maxMarkTextBox.Enabled = true;
+            //    //telVirVraestelMaksCheckbox.Enabled = true;
 
-                // Set the row styles outside the loop
-                //for (int r = 0; r < NumOfQ * 2; r++)
-                //{
-                //    //tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                //}
+            //    // Set the radio button state (checked or unchecked) based on some logic
+            //    // Example: You can check the radio button if vraagNaam or vraagMak meets certain conditions
+            //    // bool shouldCheckRadioButton = /* Your logic here */;
+            //    // telVirVraestelMaksRadioButton.Checked = shouldCheckRadioButton;
+            //    // Validate that eksamen and vraestelKode are not null
+            //    if (string.IsNullOrEmpty(selectedEksamen) || string.IsNullOrEmpty(selectedVraestelKode))
+            //    {
+            //        // Handle the case where eksamen or vraestelKode is null
+            //        return;
+            //    }
 
-                for (int j = 1; j <= NumOfQ; j++)
-                {
-                    Label lblQuestion = new Label
-                    {
-                        Text = $"Question {j}",
-                        TextAlign = ContentAlignment.MiddleCenter,
-                        Width = 80,
-                        Padding = new Padding(0, 0, 0, 1)
-                    };
-                    tableLayoutPanel.Controls.Add(lblQuestion, column, row);
+            //    // Get the updated details from the view
+            //    Vraagleer updatedDetails = new Vraagleer(); // Replace with your actual DTO class
 
-                    TextBox txtMark = new TextBox
-                    {
-                        Name = $"txtMark_{j}",
-                        Anchor = AnchorStyles.Left | AnchorStyles.Right,
-                        TextAlign = HorizontalAlignment.Center,
-                        Width = 55
-                    };
-                    tableLayoutPanel.Controls.Add(txtMark, column, row + 1);
+            //    // Save the updated details to the database
 
-                    // tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-
-                    column++;
-
-                    if (column == 5)
-                    {
-                        column = 0;
-                        row += 2;
-                    }
-                }
-            }
-
-            // Resume layout and perform layout logic
-            tableLayoutPanel.ResumeLayout(true);
+            //}
+            //AttachTextBoxEvents();
         }
         #region KeyDown
         private void txtMarksheetNumber_KeyDown(object sender, KeyEventArgs e)
@@ -107,16 +103,107 @@ namespace MarkCapturing.Views
                 //Updatepresenter.ValidateMarksheetNumber(MarksheetNumber);
                 if (isValidMarksheetNumber)
                 {
-                    QuestionsPresenter.SearchMarksheet();
+                MarksheetDTO dto = QuestionsPresenter.GetScoresheetRecords(MarksheetNumber);
+                examNumberList.Items.AddRange(QuestionsPresenter.GetByMarksheet(MarksheetNumber).ToArray());
+
+                //Display paper code of the Exam year
+                var idList = QuestionsPresenter.GetByMarksheet(MarksheetNumber);
+
+                string firstExamNumber = "";
+
+                if (idList != null && idList.Count > 0)
+                {
+                    firstExamNumber = idList[0];
                 }
+
+                if (!string.IsNullOrEmpty(firstExamNumber))
+                {
+                    int index = examNumberList.FindStringExact(firstExamNumber);
+
+                    if (index != -1)
+                    {
+                        examNumberList.SelectedIndex = index;
+                    }
+                    else
+                    {
+                        // Value not found in list
+                    }
+                }
+                   
+                    //txtMarksheetNumber.Text = dto.PS_Msheet;
+                    subSystem.Text = dto.PS_KODE;
+                examNumber.Text = dto.PS_ID_NO;
+                examYear.Text = dto.PS_EKS_DAT.ToString();
+                paperCode.Text = dto.PS_VRAESTELKODE;
+                //markQuestion1.Text = dto.PS_VRAAG_1.ToString();
+                //markQuestion2.Text = dto.PS_VRAAG_2.ToString();
+                //markQuestion3.Text = dto.PS_VRAAG_3.ToString();
+                //markQuestion4.Text = dto.PS_VRAAG_4.ToString();
+                //markQuestion5.Text = dto.PS_VRAAG_5.ToString();
+                int hashedTotal = ((int)dto.PS_GEKONTROLEERDEPUNT) + dto.PS_MarksheetSort;
+                textBox26.Text = hashedTotal.ToString();
+                hashTotal.Text = dto.PS_KAFTOTAAL.ToString();
+                total.Text = dto.PS_GEKONTROLEERDEPUNT.ToString();
+                //UpdateQuestionMarkTextBoxes(dto);
+            }
                 else
                 {
-                    MessageBox.Show("Invalid marksheet number. Please rnter a valid marksheet number.");
+                    MessageBox.Show("Marksheet number does'nt exist. Please enter a valid marksheet number.");
                 }
             }
         }
         #endregion
+        public void UpdateQuestionMarkTextBoxes(MarksheetDTO marksheetDTO)
+        {
+            var selectedExamNumber = examNumberList.SelectedItem?.ToString();
+            // Validate that eksamen and vraestelKode are not null
+            if (string.IsNullOrEmpty(selectedExamNumber))
+            {
+                // Handle the case where eksamen or vraestelKode is null
+                return;
+            }
+            marksheetDTO = QuestionsPresenter.GetScoresheetRecords(selectedExamNumber);
 
+            for (int i = 1; i <= 30; i++)
+            {
+                TextBox markTextBox = Controls.Find($"question{i}", true)[0] as TextBox;
+               
+
+                //if (i <= marksheetDTO.GetalVraeOpVraestel)
+                //{
+                    markTextBox.Enabled = true;
+                   
+                //}
+                //else
+                //{
+                //    markTextBox.Enabled = false;
+                    
+                //}
+
+                // Retrieve the VraagNaam and VraagMak values from the details object (VraagleerDTO)
+                string marks = marksheetDTO?.GetType().GetProperty($"PS-VRAAG-{i}")?.GetValue(marksheetDTO) as string;
+                //bool telVirVraestelMaks = (bool)vraagleerDTO?.GetType().GetProperty($"TelVirVraestelMaks{i}")?.GetValue(vraagleerDTO);
+                //float? vraagMaksValue = vraagleerDTO?.GetType().GetProperty($"VraagMaks{i}")?.GetValue(vraagleerDTO) as float?;
+                //string vraagMaks = vraagMaksValue.HasValue ? vraagMaksValue.Value.ToString() : string.Empty;
+
+                markTextBox.Text = marks ?? ""; // Use null-conditional operator to handle null values
+                //maxMarkTextBox.Text = vraagMaks.ToString() ?? "";
+                //telVirVraestelMaksCheckbox.Checked = telVirVraestelMaks;
+
+                //questionTextBox.Enabled = true;
+                //maxMarkTextBox.Enabled = true;
+                //telVirVraestelMaksCheckbox.Enabled = true;
+
+                // Set the radio button state (checked or unchecked) based on some logic
+                // Example: You can check the radio button if vraagNaam or vraagMak meets certain conditions
+                // bool shouldCheckRadioButton = /* Your logic here */;
+                // telVirVraestelMaksRadioButton.Checked = shouldCheckRadioButton;
+                // Validate that eksamen and vraestelKode are not null
+               
+
+            }
+           // AttachTextBoxEvents();
+        }
         #region FormClosing
         private void UpdatingQuestionsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -161,6 +248,32 @@ namespace MarkCapturing.Views
             BtnClose_Click(sender, e);
         }
 
+        private void btnShowMarksheetNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void examNumberList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //// Get the selected eksamen
+            //selectedEksamen = examYear.SelectedItem?.ToString();
+            //selectedVraestelKode = paperCode.SelectedItem?.ToString();
+
+            //// Call the presenter to retrieve the corresponding maxMark and questionNo values from the database
+            //var maxMarkValue = presenter.GetMaxMark(selectedEksamen, selectedVraestelKode);
+            //var questionNoValue = presenter.GetQuestionNo(selectedEksamen, selectedVraestelKode);
+            //var selectionAmountValue = presenter.GetSelectionAmount(selectedEksamen, selectedVraestelKode);
+
+            //// Update the maxMark and questionNo textboxes with the retrieved values
+            //maxMark.Text = maxMarkValue?.ToString() ?? ""; // Use null-conditional operator to handle null values
+            //questionNo.Text = questionNoValue?.ToString() ?? "";
+            //GetalKombinasiesVanKeuseVrae.Text = selectionAmountValue?.ToString() ?? "";
+
+            //// Update the UI to enable/disable and populate the textboxes accordingly.
+            //UpdateQuestionTextBoxes(vraagleerDTO);
+            //UpdateCombinationTextboxes(vraagleerDTO);
+            //maxMark.Focus();
+        }
     }
 }
 //    #region OldCode

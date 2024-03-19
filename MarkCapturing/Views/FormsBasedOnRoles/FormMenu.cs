@@ -1,4 +1,6 @@
-﻿using MarkCapturing.Presenter;
+﻿using DataAccessLibrary;
+using DTOs;
+using MarkCapturing.Presenter;
 using MarkCapturing.Views.FormsBasedOnRoles;
 using MarkCapturing.Views.Interfaces;
 using MarkCapturing.Views.Security;
@@ -30,7 +32,18 @@ namespace MarkCapturing.Views
 
         private void BtnReports_Click(object sender, EventArgs e)
         {
+            //VraagleerDTO vraagleerDTO = new VraagleerDTO();
+            NSC_VraagpunteStelselEntities dbContext = new NSC_VraagpunteStelselEntities();
 
+            QuestionPaperRepository repository = new QuestionPaperRepository(dbContext/*, vraagleerDTO*/);
+            QuestionPaperPresenter presenter = new QuestionPaperPresenter(repository);
+            
+            IQuestionPaperPresenter presenterInterface = (IQuestionPaperPresenter)presenter;
+
+
+            // Pass the presenter to the view constructor
+            QuestionPaperView questionPaperView = new QuestionPaperView(presenterInterface/*, vraagleerDTO*/);
+            questionPaperView.Show();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)

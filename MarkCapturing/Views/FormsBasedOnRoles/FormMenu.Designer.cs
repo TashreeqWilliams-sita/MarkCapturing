@@ -312,7 +312,7 @@ namespace MarkCapturing.Views
             this.BtnReports.Name = "BtnReports";
             this.BtnReports.Size = new System.Drawing.Size(519, 43);
             this.BtnReports.TabIndex = 17;
-            this.BtnReports.Text = "Reports";
+            this.BtnReports.Text = "Create or Update Question Paper";
             this.BtnReports.UseVisualStyleBackColor = false;
             this.BtnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 

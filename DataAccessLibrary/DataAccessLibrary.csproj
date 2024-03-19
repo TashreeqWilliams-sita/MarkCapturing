@@ -38,6 +38,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
@@ -47,6 +50,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlmalSaam_Data.cs">
@@ -451,6 +460,7 @@
     <Compile Include="Grade12File.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IQuestionPaperRepository.cs" />
     <Compile Include="Interfaces\IResetPasswordRepository.cs" />
     <Compile Include="Interfaces\IMarksheetRepository.cs" />
     <Compile Include="Interfaces\IRegisterNewUser.cs" />
@@ -480,6 +490,7 @@
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\QuestionPaperRepository.cs" />
     <Compile Include="Repositories\ResetPasswordRepository.cs" />
     <Compile Include="Repositories\ResetRequestRepository.cs" />
     <Compile Include="Repositories\RolesRepository.cs" />
@@ -576,6 +587,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{8f6bd259-ca88-450d-a6ca-fbba725ebd7f}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="EntityModel.Context.tt">

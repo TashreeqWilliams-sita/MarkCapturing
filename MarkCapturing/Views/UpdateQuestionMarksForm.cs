@@ -30,11 +30,11 @@ namespace MarkCapturing.Views
             this.Close();
         }
 
-        private void BtnUpdateMarks_Click(object sender, EventArgs e)
-        {
-            UpdatingQuestionsForm updatingQuestions = new UpdatingQuestionsForm();
-            updatingQuestions.Show();
-        }
+        //private void BtnUpdateMarks_Click(object sender, EventArgs e)
+        //{
+        //    UpdatingQuestionsForm updatingQuestions = new UpdatingQuestionsForm();
+        //    updatingQuestions.Show();
+        //}
 
         private void UpdateQuestionMarksForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -79,5 +79,6 @@ namespace MarkCapturing.Views
             UpdatingQuestionsForm updatingQuestionsForm = new UpdatingQuestionsForm();
             updatingQuestionsForm.Show();
         }
+
     }
 }

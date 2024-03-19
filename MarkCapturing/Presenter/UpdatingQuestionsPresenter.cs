@@ -4,10 +4,11 @@ using DataAccessLibrary.Repositories;
 using DataAccessLibrary;
 using System;
 using System.Collections.Generic;
+using DTOs;
 
 namespace MarkCapturing.Presenter
 {
-    public class UpdatingQuestionsPresenter
+    public class UpdatingQuestionsPresenter : IUpdatingQuestionsPresenter
     {
         private readonly MarksheetRepository marksheetRepository;
         private readonly IUpdatingMarksView view;
@@ -78,13 +79,21 @@ namespace MarkCapturing.Presenter
         //    }
         //    return Scoresheets;
         //}
+        public MarksheetDTO GetScoresheetRecords(string marksheetnumber)
+        {
+            return marksheetRepository.GetScoresheetRecords(marksheetnumber);
+        }
+        public List<string> GetByMarksheet(string marksheet)
+        {
+            return marksheetRepository.GetByMarksheet(marksheet);
+        }
         public void SearchMarksheet()
         {
             string marksheetNumber = view.MarksheetNumber;
             //EKS_PUNTESTATE eKS_PUNTESTATE = marksheetRepository.GetByMarksheeet(marksheetNumber);
             //ValidateMarksheet(marksheetNumber);
             /*List<Scoresheets> scoresheets = RetrieveRecords(marksheetNumber);*/
-            List<Scoresheets> scoresheets = marksheetRepository.GetScoresheetRecords(marksheetNumber);
+            MarksheetDTO scoresheets = marksheetRepository.GetScoresheetRecords(marksheetNumber);
             view.ShowListScoresheet(scoresheets);
         }
         //public void SaveMarkData()//will implement at a later stage

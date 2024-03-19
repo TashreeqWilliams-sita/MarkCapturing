@@ -4,6 +4,7 @@ using DataAccessLibrary;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace MarkCapturing.Views
 {
@@ -14,7 +15,7 @@ namespace MarkCapturing.Views
     {
         string MarksheetNumber { get; }
         void ShowErrorMessage(string message);
-        void ShowListScoresheet(List<Scoresheets> ScoresheetList);
+        void ShowListScoresheet(MarksheetDTO ScoresheetList);
         void ShowRecords();
     }
 }
