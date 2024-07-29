@@ -5,6 +5,17 @@ VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkCapturing", "MarkCapturing\MarkCapturing.csproj", "{4D9E068C-5341-4AD8-9F57-A0B640536E35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{665D3BB9-6596-434F-99F6-E7DCFE2C86CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B5411BE-19CE-431F-B075-244A9382A10D}"
+	ProjectSection(SolutionItems) = preProject
+		Global.asax = Global.asax
+		MarkCapturing.csproj = MarkCapturing.csproj
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", "{8F6BD259-CA88-450D-A6CA-FBBA725EBD7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +26,14 @@ Global
 		{4D9E068C-5341-4AD8-9F57-A0B640536E35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D9E068C-5341-4AD8-9F57-A0B640536E35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D9E068C-5341-4AD8-9F57-A0B640536E35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{665D3BB9-6596-434F-99F6-E7DCFE2C86CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{665D3BB9-6596-434F-99F6-E7DCFE2C86CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{665D3BB9-6596-434F-99F6-E7DCFE2C86CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{665D3BB9-6596-434F-99F6-E7DCFE2C86CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6BD259-CA88-450D-A6CA-FBBA725EBD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6BD259-CA88-450D-A6CA-FBBA725EBD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6BD259-CA88-450D-A6CA-FBBA725EBD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6BD259-CA88-450D-A6CA-FBBA725EBD7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

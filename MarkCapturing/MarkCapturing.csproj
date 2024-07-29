@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MarkCapturing</RootNamespace>
     <AssemblyName>MarkCapturing</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +34,91 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.20\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.20\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.20\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +128,183 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="CaptureMarksUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CaptureMarksUserControl.Designer.cs">
+      <DependentUpon>CaptureMarksUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataStorage.cs" />
+    <Compile Include="Helpers\EncryptionHelper.cs" />
+    <Compile Include="Helpers\TempPasswordHelper.cs" />
+    <Compile Include="Presenter\FormNavigationController.cs" />
+    <Compile Include="Presenter\ILoginPresenter.cs" />
+    <Compile Include="Presenter\IUpdatingQuestionsPresenter.cs" />
+    <Compile Include="Presenter\IResetPasswordPresenter.cs" />
+    <Compile Include="Presenter\IQuestionPaperPersenter.cs" />
+    <Compile Include="Presenter\IResetPasswordRequestPresenter.cs" />
+    <Compile Include="Presenter\LogInPresenter.cs" />
+    <Compile Include="Presenter\QuestionPaperPresenter.cs" />
+    <Compile Include="Presenter\QuestionsPresenter.cs" />
+    <Compile Include="Presenter\UpdateQuestionsMenuPresenter.cs" />
+    <Compile Include="Presenter\MenuPresenter.cs" />
+    <Compile Include="Presenter\RegisterPresenter.cs" />
+    <Compile Include="Presenter\ResetPasswordPresenter.cs" />
+    <Compile Include="Presenter\ResetPasswordRequestPresenter.cs" />
+    <Compile Include="Presenter\UpdatingQuestionsPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AssigningRolesService.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\RegisterUserService.cs" />
+    <Compile Include="Services\ResetPasswordService.cs" />
+    <Compile Include="UpdateQuestionPaperUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateQuestionPaperUserControl.Designer.cs">
+      <DependentUpon>UpdateQuestionPaperUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormBoxer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormBoxer.Designer.cs">
+      <DependentUpon>FormBoxer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormCapturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormCapturer.Designer.cs">
+      <DependentUpon>FormCapturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interfaces\IMenuView.cs" />
+    <Compile Include="Views\Interfaces\ILoginView.cs" />
+    <Compile Include="Views\Interfaces\IQuestionPaperView.cs" />
+    <Compile Include="Views\Interfaces\IRegisterView.cs" />
+    <Compile Include="Views\Interfaces\IResetPasswordView.cs" />
+    <Compile Include="Views\Interfaces\IResetRequestView.cs" />
+    <Compile Include="Views\Interfaces\ISystemSecurityView.cs" />
+    <Compile Include="Views\Interfaces\IUpdateQuestionMarksView.cs" />
+    <Compile Include="Views\Interfaces\IUpdateQuestionsView.cs" />
+    <Compile Include="Views\QuestionPaperView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionPaperView.Designer.cs">
+      <DependentUpon>QuestionPaperView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\FormResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Security\FormResetPassword.Designer.cs">
+      <DependentUpon>FormResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\FormResetPasswordRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Security\FormResetPasswordRequests.Designer.cs">
+      <DependentUpon>FormResetPasswordRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\FormSecuritySystemParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Security\FormSecuritySystemParameters.Designer.cs">
+      <DependentUpon>FormSecuritySystemParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormScriptIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormScriptIn.Designer.cs">
+      <DependentUpon>FormScriptIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormScriptOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormScriptOut.Designer.cs">
+      <DependentUpon>FormScriptOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormScripts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormScripts.Designer.cs">
+      <DependentUpon>FormScripts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormSuperuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormSuperuser.Designer.cs">
+      <DependentUpon>FormSuperuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormVerifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsBasedOnRoles\FormVerifier.Designer.cs">
+      <DependentUpon>FormVerifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interfaces\IUpdatingMarksView.cs" />
+    <Compile Include="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResetPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ResetPasswordForm.Designer.cs">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSecurityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSecurityForm.Designer.cs">
+      <DependentUpon>SystemSecurityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateQuestionMarksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateQuestionMarksForm.Designer.cs">
+      <DependentUpon>UpdateQuestionMarksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdatingQuestionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UpdatingQuestionsForm.Designer.cs">
+      <DependentUpon>UpdatingQuestionsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CaptureMarksUserControl.resx">
+      <DependentUpon>CaptureMarksUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +313,54 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UpdateQuestionPaperUserControl.resx">
+      <DependentUpon>UpdateQuestionPaperUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormsBasedOnRoles\FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionPaperView.resx">
+      <DependentUpon>QuestionPaperView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Security\FormResetPassword.resx">
+      <DependentUpon>FormResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Security\FormResetPasswordRequests.resx">
+      <DependentUpon>FormResetPasswordRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Security\FormSecuritySystemParameters.resx">
+      <DependentUpon>FormSecuritySystemParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormsBasedOnRoles\FormVerifier.resx">
+      <DependentUpon>FormVerifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ResetPasswordForm.resx">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSecurityForm.resx">
+      <DependentUpon>SystemSecurityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UpdateQuestionMarksForm.resx">
+      <DependentUpon>UpdateQuestionMarksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UpdatingQuestionsForm.resx">
+      <DependentUpon>UpdatingQuestionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +373,40 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WCEDlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %2832%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %2824%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password-icon-png-22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key+password+unlock+icon-1320190937666084898.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\safety+security+unlock+icon-1320190938147203473.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLibrary\DataAccessLibrary.csproj">
+      <Project>{665d3bb9-6596-434f-99f6-e7dcfe2c86cd}</Project>
+      <Name>DataAccessLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{8f6bd259-ca88-450d-a6ca-fbba725ebd7f}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

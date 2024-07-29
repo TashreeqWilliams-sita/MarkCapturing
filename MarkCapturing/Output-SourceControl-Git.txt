@@ -1,0 +1,601 @@
+﻿Opening repositories:
+C:\Sandbox\SITA\MarkCapturing
+Switched to branch 'Asa'
+Your branch is up to date with 'origin/Asa'.
+Checked out refs/heads/Asa
+Opening repositories:
+C:\Sandbox\SITA\MarkCapturing
+Switched to branch 'Luthando'
+Checked out refs/heads/Luthando
+Updating files:   5% (20/398)
+Updating files:   6% (24/398)
+Updating files:   7% (28/398)
+Updating files:   8% (32/398)
+Updating files:   9% (36/398)
+Updating files:  10% (40/398)
+Updating files:  11% (44/398)
+Updating files:  12% (48/398)
+Updating files:  12% (49/398)
+Updating files:  13% (52/398)
+Updating files:  14% (56/398)
+Updating files:  15% (60/398)
+Updating files:  16% (64/398)
+Updating files:  16% (65/398)
+Updating files:  17% (68/398)
+Updating files:  18% (72/398)
+Updating files:  19% (76/398)
+Updating files:  19% (78/398)
+Updating files:  20% (80/398)
+Updating files:  21% (84/398)
+Updating files:  22% (88/398)
+Updating files:  23% (92/398)
+Updating files:  24% (96/398)
+Updating files:  25% (100/398)
+Updating files:  26% (104/398)
+Updating files:  27% (108/398)
+Updating files:  28% (112/398)
+Updating files:  29% (116/398)
+Updating files:  30% (120/398)
+Updating files:  30% (121/398)
+Updating files:  31% (124/398)
+Updating files:  32% (128/398)
+Updating files:  33% (132/398)
+Updating files:  34% (136/398)
+Updating files:  34% (137/398)
+Updating files:  35% (140/398)
+Updating files:  36% (144/398)
+Updating files:  37% (148/398)
+Updating files:  38% (152/398)
+Updating files:  39% (156/398)
+Updating files:  40% (160/398)
+Updating files:  41% (164/398)
+Updating files:  42% (168/398)
+Updating files:  43% (172/398)
+Updating files:  44% (176/398)
+Updating files:  44% (179/398)
+Updating files:  45% (180/398)
+Updating files:  46% (184/398)
+Updating files:  47% (188/398)
+Updating files:  48% (192/398)
+Updating files:  49% (196/398)
+Updating files:  50% (199/398)
+Updating files:  51% (203/398)
+Updating files:  52% (207/398)
+Updating files:  53% (211/398)
+Updating files:  53% (214/398)
+Updating files:  54% (215/398)
+Updating files:  55% (219/398)
+Updating files:  56% (223/398)
+Updating files:  57% (227/398)
+Updating files:  58% (231/398)
+Updating files:  58% (234/398)
+Updating files:  59% (235/398)
+Updating files:  60% (239/398)
+Updating files:  61% (243/398)
+Updating files:  62% (247/398)
+Updating files:  62% (248/398)
+Updating files:  63% (251/398)
+Updating files:  64% (255/398)
+Updating files:  65% (259/398)
+Updating files:  65% (262/398)
+Updating files:  66% (263/398)
+Updating files:  67% (267/398)
+Updating files:  68% (271/398)
+Updating files:  68% (273/398)
+Updating files:  69% (275/398)
+Updating files:  70% (279/398)
+Updating files:  70% (282/398)
+Updating files:  71% (283/398)
+Updating files:  72% (287/398)
+Updating files:  72% (289/398)
+Updating files:  73% (291/398)
+Updating files:  73% (294/398)
+Updating files:  74% (295/398)
+Updating files:  75% (299/398)
+Updating files:  76% (303/398)
+Updating files:  77% (307/398)
+Updating files:  78% (311/398)
+Updating files:  79% (315/398)
+Updating files:  80% (319/398)
+Updating files:  81% (323/398)
+Updating files:  82% (327/398)
+Updating files:  82% (328/398)
+Updating files:  83% (331/398)
+Updating files:  84% (335/398)
+Updating files:  85% (339/398)
+Updating files:  86% (343/398)
+Updating files:  87% (347/398)
+Updating files:  88% (351/398)
+Updating files:  89% (355/398)
+Updating files:  90% (359/398)
+Updating files:  91% (363/398)
+Updating files:  92% (367/398)
+Updating files:  92% (368/398)
+Updating files:  93% (371/398)
+Updating files:  94% (375/398)
+Updating files:  95% (379/398)
+Updating files:  96% (383/398)
+Updating files:  97% (387/398)
+Updating files:  98% (391/398)
+Updating files:  99% (395/398)
+Updating files: 100% (398/398)
+Updating files: 100% (398/398), done.
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Checked out refs/heads/master
+Updating files:  50% (201/398)
+Updating files:  51% (203/398)
+Updating files:  52% (207/398)
+Updating files:  53% (211/398)
+Updating files:  54% (215/398)
+Updating files:  55% (219/398)
+Updating files:  56% (223/398)
+Updating files:  57% (227/398)
+Updating files:  58% (231/398)
+Updating files:  59% (235/398)
+Updating files:  60% (239/398)
+Updating files:  61% (243/398)
+Updating files:  62% (247/398)
+Updating files:  63% (251/398)
+Updating files:  64% (255/398)
+Updating files:  65% (259/398)
+Updating files:  66% (263/398)
+Updating files:  67% (267/398)
+Updating files:  68% (271/398)
+Updating files:  69% (275/398)
+Updating files:  70% (279/398)
+Updating files:  71% (283/398)
+Updating files:  72% (287/398)
+Updating files:  73% (291/398)
+Updating files:  74% (295/398)
+Updating files:  75% (299/398)
+Updating files:  76% (303/398)
+Updating files:  77% (307/398)
+Updating files:  78% (311/398)
+Updating files:  79% (315/398)
+Updating files:  80% (319/398)
+Updating files:  81% (323/398)
+Updating files:  82% (327/398)
+Updating files:  83% (331/398)
+Updating files:  84% (335/398)
+Updating files:  85% (339/398)
+Updating files:  86% (343/398)
+Updating files:  87% (347/398)
+Updating files:  88% (351/398)
+Updating files:  89% (355/398)
+Updating files:  90% (359/398)
+Updating files:  91% (363/398)
+Updating files:  92% (367/398)
+Updating files:  93% (371/398)
+Updating files:  94% (375/398)
+Updating files:  95% (379/398)
+Updating files:  96% (383/398)
+Updating files:  97% (387/398)
+Updating files:  98% (391/398)
+Updating files:  99% (395/398)
+Updating files: 100% (398/398)
+Updating files: 100% (398/398), done.
+Your branch is up to date with 'origin/Asa'.
+Switched to branch 'Asa'
+Checked out refs/heads/Asa
+Already on 'Asa'
+Your branch is up to date with 'origin/Asa'.
+Checked out Asa
+Opening repositories:
+C:\Users\student
+fatal: detected dubious ownership in repository at 'C:/Users/student'
+'C:/Users/student' is owned by:
+	'S-1-5-18'
+but the current user is:
+	'S-1-5-21-4067356369-438373995-3132671610-1004'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory C:/Users/student
+fatal: detected dubious ownership in repository at 'C:/Users/student'
+'C:/Users/student' is owned by:
+	'S-1-5-18'
+but the current user is:
+	'S-1-5-21-4067356369-438373995-3132671610-1004'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory C:/Users/student
+fatal: detected dubious ownership in repository at 'C:/Users/student'
+'C:/Users/student' is owned by:
+	'S-1-5-18'
+but the current user is:
+	'S-1-5-21-4067356369-438373995-3132671610-1004'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory C:/Users/student
+fatal: detected dubious ownership in repository at 'C:/Users/student'
+'C:/Users/student' is owned by:
+	'S-1-5-18'
+but the current user is:
+	'S-1-5-21-4067356369-438373995-3132671610-1004'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory C:/Users/student
+Opening repositories:
+C:\Sandbox\SITA\MarkCapturing
+Updating files:  33% (132/398)
+Updating files:  34% (136/398)
+Updating files:  35% (140/398)
+Updating files:  36% (144/398)
+Updating files:  37% (148/398)
+Updating files:  38% (152/398)
+Updating files:  39% (156/398)
+Updating files:  40% (160/398)
+Updating files:  41% (164/398)
+Updating files:  42% (168/398)
+Updating files:  43% (172/398)
+Updating files:  44% (176/398)
+Updating files:  45% (180/398)
+Updating files:  45% (183/398)
+Updating files:  46% (184/398)
+Updating files:  47% (188/398)
+Updating files:  48% (192/398)
+Updating files:  49% (196/398)
+Updating files:  50% (199/398)
+Updating files:  51% (203/398)
+Updating files:  52% (207/398)
+Updating files:  53% (211/398)
+Updating files:  54% (215/398)
+Updating files:  55% (219/398)
+Updating files:  56% (223/398)
+Updating files:  57% (227/398)
+Updating files:  58% (231/398)
+Updating files:  59% (235/398)
+Updating files:  60% (239/398)
+Updating files:  61% (243/398)
+Updating files:  62% (247/398)
+Updating files:  63% (251/398)
+Updating files:  64% (255/398)
+Updating files:  65% (259/398)
+Updating files:  66% (263/398)
+Updating files:  67% (267/398)
+Updating files:  68% (271/398)
+Updating files:  69% (275/398)
+Updating files:  70% (279/398)
+Updating files:  71% (283/398)
+Updating files:  72% (287/398)
+Updating files:  73% (291/398)
+Updating files:  74% (295/398)
+Updating files:  74% (297/398)
+Updating files:  75% (299/398)
+Updating files:  76% (303/398)
+Updating files:  77% (307/398)
+Updating files:  78% (311/398)
+Updating files:  79% (315/398)
+Updating files:  80% (319/398)
+Updating files:  81% (323/398)
+Updating files:  82% (327/398)
+Updating files:  83% (331/398)
+Updating files:  84% (335/398)
+Updating files:  85% (339/398)
+Updating files:  86% (343/398)
+Updating files:  87% (347/398)
+Updating files:  88% (351/398)
+Updating files:  89% (355/398)
+Updating files:  90% (359/398)
+Updating files:  91% (363/398)
+Updating files:  92% (367/398)
+Updating files:  93% (371/398)
+Updating files:  94% (375/398)
+Updating files:  95% (379/398)
+Updating files:  96% (383/398)
+Updating files:  96% (384/398)
+Updating files:  97% (387/398)
+Updating files:  98% (391/398)
+Updating files:  99% (395/398)
+Updating files: 100% (398/398)
+Updating files: 100% (398/398), done.
+Your branch is ahead of 'origin/master' by 1 commit.
+Switched to branch 'master'
+  (use "git push" to publish your local commits)
+Checked out master
+Updating files:  59% (236/398)
+Updating files:  60% (239/398)
+Updating files:  61% (243/398)
+Updating files:  62% (247/398)
+Updating files:  63% (251/398)
+Updating files:  64% (255/398)
+Updating files:  65% (259/398)
+Updating files:  66% (263/398)
+Updating files:  67% (267/398)
+Updating files:  68% (271/398)
+Updating files:  69% (275/398)
+Updating files:  70% (279/398)
+Updating files:  71% (283/398)
+Updating files:  72% (287/398)
+Updating files:  73% (291/398)
+Updating files:  74% (295/398)
+Updating files:  75% (299/398)
+Updating files:  76% (303/398)
+Updating files:  77% (307/398)
+Updating files:  78% (311/398)
+Updating files:  79% (315/398)
+Updating files:  80% (319/398)
+Updating files:  81% (323/398)
+Updating files:  82% (327/398)
+Updating files:  83% (331/398)
+Updating files:  84% (335/398)
+Updating files:  85% (339/398)
+Updating files:  86% (343/398)
+Updating files:  87% (347/398)
+Updating files:  88% (351/398)
+Updating files:  89% (355/398)
+Updating files:  90% (359/398)
+Updating files:  91% (363/398)
+Updating files:  92% (367/398)
+Updating files:  93% (371/398)
+Updating files:  94% (375/398)
+Updating files:  95% (379/398)
+Updating files:  96% (383/398)
+Updating files:  97% (387/398)
+Updating files:  98% (391/398)
+Updating files:  99% (395/398)
+Updating files: 100% (398/398)
+Updating files: 100% (398/398), done.
+Switched to branch 'Luthando'
+Checked out refs/heads/Luthando
+Updating files:  52% (207/398)
+Updating files:  53% (211/398)
+Updating files:  54% (215/398)
+Updating files:  55% (219/398)
+Updating files:  56% (223/398)
+Updating files:  57% (227/398)
+Updating files:  58% (231/398)
+Updating files:  59% (235/398)
+Updating files:  60% (239/398)
+Updating files:  61% (243/398)
+Updating files:  62% (247/398)
+Updating files:  63% (251/398)
+Updating files:  64% (255/398)
+Updating files:  65% (259/398)
+Updating files:  66% (263/398)
+Updating files:  67% (267/398)
+Updating files:  68% (271/398)
+Updating files:  69% (275/398)
+Updating files:  70% (279/398)
+Updating files:  71% (283/398)
+Updating files:  72% (287/398)
+Updating files:  73% (291/398)
+Updating files:  74% (295/398)
+Updating files:  75% (299/398)
+Updating files:  76% (303/398)
+Updating files:  77% (307/398)
+Updating files:  78% (311/398)
+Updating files:  79% (315/398)
+Updating files:  80% (319/398)
+Updating files:  81% (323/398)
+Updating files:  82% (327/398)
+Updating files:  83% (331/398)
+Updating files:  84% (335/398)
+Updating files:  85% (339/398)
+Updating files:  86% (343/398)
+Updating files:  87% (347/398)
+Updating files:  88% (351/398)
+Updating files:  89% (355/398)
+Updating files:  90% (359/398)
+Updating files:  91% (363/398)
+Updating files:  92% (367/398)
+Updating files:  93% (371/398)
+Updating files:  94% (375/398)
+Updating files:  95% (379/398)
+Updating files:  96% (383/398)
+Updating files:  96% (385/398)
+Updating files:  97% (387/398)
+Updating files:  98% (391/398)
+Updating files:  99% (395/398)
+Updating files: 100% (398/398)
+Updating files: 100% (398/398), done.
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Switched to branch 'master'
+Checked out refs/heads/master
+Pushing master
+git: 'credential-manager' is not a git command. See 'git --help'.
+
+The most similar command is
+	credential-manager-core
+To https://github.com/camzilikazi/MarkCapturing.git
+Error: failed to push some refs to 'https://github.com/camzilikazi/MarkCapturing.git'
+Error: hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Error encountered while pushing to the remote repository: rejected Updates were rejected because the remote contains work that you do not have locally. This is usually caused by another repository pushing to the same ref. You may want to first integrate the remote changes before pushing again.
+git: 'credential-manager' is not a git command. See 'git --help'.
+The most similar command is
+	credential-manager-core
+Remote: Enumerating objects: 199, done.        
+Remote: Counting objects:   0% (1/199)        
+Remote: Counting objects:   1% (2/199)        
+Remote: Counting objects:   2% (4/199)        
+Remote: Counting objects:   3% (6/199)        
+Remote: Counting objects:   4% (8/199)        
+Remote: Counting objects:   5% (10/199)        
+Remote: Counting objects:   6% (12/199)        
+Remote: Counting objects:   7% (14/199)        
+Remote: Counting objects:   8% (16/199)        
+Remote: Counting objects:   9% (18/199)        
+Remote: Counting objects:  10% (20/199)        
+Remote: Counting objects:  11% (22/199)        
+Remote: Counting objects:  12% (24/199)        
+Remote: Counting objects:  13% (26/199)        
+Remote: Counting objects:  14% (28/199)        
+Remote: Counting objects:  15% (30/199)        
+Remote: Counting objects:  16% (32/199)        
+Remote: Counting objects:  17% (34/199)        
+Remote: Counting objects:  18% (36/199)        
+Remote: Counting objects:  19% (38/199)        
+Remote: Counting objects:  20% (40/199)        
+Remote: Counting objects:  21% (42/199)        
+Remote: Counting objects:  22% (44/199)        
+Remote: Counting objects:  23% (46/199)        
+Remote: Counting objects:  24% (48/199)        
+Remote: Counting objects:  25% (50/199)        
+Remote: Counting objects:  26% (52/199)        
+Remote: Counting objects:  27% (54/199)        
+Remote: Counting objects:  28% (56/199)        
+Remote: Counting objects:  29% (58/199)        
+Remote: Counting objects:  30% (60/199)        
+Remote: Counting objects:  31% (62/199)        
+Remote: Counting objects:  32% (64/199)        
+Remote: Counting objects:  33% (66/199)        
+Remote: Counting objects:  34% (68/199)        
+Remote: Counting objects:  35% (70/199)        
+Remote: Counting objects:  36% (72/199)        
+Remote: Counting objects:  37% (74/199)        
+Remote: Counting objects:  38% (76/199)        
+Remote: Counting objects:  39% (78/199)        
+Remote: Counting objects:  40% (80/199)        
+Remote: Counting objects:  41% (82/199)        
+Remote: Counting objects:  42% (84/199)        
+Remote: Counting objects:  43% (86/199)        
+Remote: Counting objects:  44% (88/199)        
+Remote: Counting objects:  45% (90/199)        
+Remote: Counting objects:  46% (92/199)        
+Remote: Counting objects:  47% (94/199)        
+Remote: Counting objects:  48% (96/199)        
+Remote: Counting objects:  49% (98/199)        
+Remote: Counting objects:  50% (100/199)        
+Remote: Counting objects:  51% (102/199)        
+Remote: Counting objects:  52% (104/199)        
+Remote: Counting objects:  53% (106/199)        
+Remote: Counting objects:  54% (108/199)        
+Remote: Counting objects:  55% (110/199)        
+Remote: Counting objects:  56% (112/199)        
+Remote: Counting objects:  57% (114/199)        
+Remote: Counting objects:  58% (116/199)        
+Remote: Counting objects:  59% (118/199)        
+Remote: Counting objects:  60% (120/199)        
+Remote: Counting objects:  61% (122/199)        
+Remote: Counting objects:  62% (124/199)        
+Remote: Counting objects:  63% (126/199)        
+Remote: Counting objects:  64% (128/199)        
+Remote: Counting objects:  65% (130/199)        
+Remote: Counting objects:  66% (132/199)        
+Remote: Counting objects:  67% (134/199)        
+Remote: Counting objects:  68% (136/199)        
+Remote: Counting objects:  69% (138/199)        
+Remote: Counting objects:  70% (140/199)        
+Remote: Counting objects:  71% (142/199)        
+Remote: Counting objects:  72% (144/199)        
+Remote: Counting objects:  73% (146/199)        
+Remote: Counting objects:  74% (148/199)        
+Remote: Counting objects:  75% (150/199)        
+Remote: Counting objects:  76% (152/199)        
+Remote: Counting objects:  77% (154/199)        
+Remote: Counting objects:  78% (156/199)        
+Remote: Counting objects:  79% (158/199)        
+Remote: Counting objects:  80% (160/199)        
+Remote: Counting objects:  81% (162/199)        
+Remote: Counting objects:  82% (164/199)        
+Remote: Counting objects:  83% (166/199)        
+Remote: Counting objects:  84% (168/199)        
+Remote: Counting objects:  85% (170/199)        
+Remote: Counting objects:  86% (172/199)        
+Remote: Counting objects:  87% (174/199)        
+Remote: Counting objects:  88% (176/199)        
+Remote: Counting objects:  89% (178/199)        
+Remote: Counting objects:  90% (180/199)        
+Remote: Counting objects:  91% (182/199)        
+Remote: Counting objects:  92% (184/199)        
+Remote: Counting objects:  93% (186/199)        
+Remote: Counting objects:  94% (188/199)        
+Remote: Counting objects:  95% (190/199)        
+Remote: Counting objects:  96% (192/199)        
+Remote: Counting objects:  97% (194/199)        
+Remote: Counting objects:  98% (196/199)        
+Remote: Counting objects:  99% (198/199)        
+Remote: Counting objects: 100% (199/199)        
+Remote: Counting objects: 100% (199/199), done.        
+Remote: Compressing objects:   3% (1/28)        
+Remote: Compressing objects:   7% (2/28)        
+Remote: Compressing objects:  10% (3/28)        
+Remote: Compressing objects:  14% (4/28)        
+Remote: Compressing objects:  17% (5/28)        
+Remote: Compressing objects:  21% (6/28)        
+Remote: Compressing objects:  25% (7/28)        
+Remote: Compressing objects:  28% (8/28)        
+Remote: Compressing objects:  32% (9/28)        
+Remote: Compressing objects:  35% (10/28)        
+Remote: Compressing objects:  39% (11/28)        
+Remote: Compressing objects:  42% (12/28)        
+Remote: Compressing objects:  46% (13/28)        
+Remote: Compressing objects:  50% (14/28)        
+Remote: Compressing objects:  53% (15/28)        
+Remote: Compressing objects:  57% (16/28)        
+Remote: Compressing objects:  60% (17/28)        
+Remote: Compressing objects:  64% (18/28)        
+Remote: Compressing objects:  67% (19/28)        
+Remote: Compressing objects:  71% (20/28)        
+Remote: Compressing objects:  75% (21/28)        
+Remote: Compressing objects:  78% (22/28)        
+Remote: Compressing objects:  82% (23/28)        
+Remote: Compressing objects:  85% (24/28)        
+Remote: Compressing objects:  89% (25/28)        
+Remote: Compressing objects:  92% (26/28)        
+Remote: Compressing objects:  96% (27/28)        
+Remote: Compressing objects: 100% (28/28)        
+Remote: Compressing objects: 100% (28/28), done.        
+Remote: Total 193 (delta 166), reused 189 (delta 165), pack-reused 0        
+From https://github.com/camzilikazi/MarkCapturing
+   31aa353..5afc9f9  master     -> origin/master
+   31aa353..8c01b90  Asa        -> origin/Asa
+ * [new branch]      Luthando   -> origin/Luthando
+Error: CONFLICT (content): Merge conflict in MarkCapturing/App.config
+Auto-merging MarkCapturing/CapturingOfQuestionsForm.Designer.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/CapturingOfQuestionsForm.Designer.cs
+Auto-merging MarkCapturing/CapturingOfQuestionsForm.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/CapturingOfQuestionsForm.cs
+Auto-merging MarkCapturing/LogInForm.Designer.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/LogInForm.Designer.cs
+Auto-merging MarkCapturing/LogInForm.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/LogInForm.cs
+Auto-merging MarkCapturing/MarkCapturing.csproj
+CONFLICT (content): Merge conflict in MarkCapturing/MarkCapturing.csproj
+Auto-merging MarkCapturing/Model1.Designer.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/Model1.Designer.cs
+Auto-merging MarkCapturing/Model1.edmx.diagram
+CONFLICT (add/add): Merge conflict in MarkCapturing/Model1.edmx.diagram
+Auto-merging MarkCapturing/packages.config
+CONFLICT (add/add): Merge conflict in MarkCapturing/packages.config
+Automatic merge failed; fix conflicts and then commit the result.
+
+git: 'credential-manager' is not a git command. See 'git --help'.
+The most similar command is
+	credential-manager-core
+Updating 31aa353..5afc9f9
+The pull would overwrite your local changes to the following 3 files:
+	MarkCapturing/App.config
+	MarkCapturing/MarkCapturing.csproj
+	MarkCapturing/Program.cs
+Commit 46462c72 created locally in repository C:\Sandbox\SITA\MarkCapturing
+Pushing master
+git: 'credential-manager' is not a git command. See 'git --help'.
+The most similar command is
+	credential-manager-core
+Error: CONFLICT (content): Merge conflict in MarkCapturing/App.config
+Auto-merging MarkCapturing/CapturingOfQuestionsForm.Designer.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/CapturingOfQuestionsForm.Designer.cs
+Auto-merging MarkCapturing/CapturingOfQuestionsForm.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/CapturingOfQuestionsForm.cs
+Auto-merging MarkCapturing/LogInForm.Designer.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/LogInForm.Designer.cs
+Auto-merging MarkCapturing/LogInForm.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/LogInForm.cs
+Auto-merging MarkCapturing/MarkCapturing.csproj
+CONFLICT (content): Merge conflict in MarkCapturing/MarkCapturing.csproj
+Auto-merging MarkCapturing/Model1.Designer.cs
+CONFLICT (add/add): Merge conflict in MarkCapturing/Model1.Designer.cs
+Auto-merging MarkCapturing/Model1.edmx.diagram
+CONFLICT (add/add): Merge conflict in MarkCapturing/Model1.edmx.diagram
+Auto-merging MarkCapturing/packages.config
+CONFLICT (add/add): Merge conflict in MarkCapturing/packages.config
+Automatic merge failed; fix conflicts and then commit the result.
+

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFrameworkVersion>net48</TargetFrameworkVersion>
+		<UseWPF>true</UseWPF>
+		<!-- Add this line if your project is a WPF application -->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Add your project files here -->
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Add your package references here -->
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+	</ItemGroup>
+
+</Project>
+S
