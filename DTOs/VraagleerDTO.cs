@@ -12,6 +12,7 @@ namespace DTOs
         //public string VrstelKode { get; set; }
         public string VraestelKode { get; set; }
         public string Eksamen { get; set; }
+        public List<int?> CombinationMaxMarks { get; set; }
         public Int16? GetalVraeOpVraestel { get; set; }
         public int VraestelMaksimum { get; set; }
         public Single? VraagMaks1 { get; set; }

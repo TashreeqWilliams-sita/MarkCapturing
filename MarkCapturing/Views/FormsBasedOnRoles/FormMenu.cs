@@ -1,4 +1,5 @@
 ﻿using DataAccessLibrary;
+using DataAccessLibrary.Repositories;
 using DTOs;
 using MarkCapturing.Presenter;
 using MarkCapturing.Views.FormsBasedOnRoles;
@@ -123,6 +124,34 @@ namespace MarkCapturing.Views
         public void showErrorMessage(string message)
         {
             MessageBox.Show(message, "Login Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            NSC_VraagpunteStelselEntities DbContext = new NSC_VraagpunteStelselEntities();
+            QuestionPaperRepository questionPaperRepository = new QuestionPaperRepository(DbContext);
+            QuestionPaperPresenter questionPaperPresenter = new QuestionPaperPresenter(questionPaperRepository);
+            MarksheetRepository marksheetRepository = new MarksheetRepository(DbContext);
+            QuestionsPresenter questionsPresenter = new QuestionsPresenter(marksheetRepository);
+            // Create an instance of the UserForm
+            CaptureMarksUserControl captureMarksUserControl = new CaptureMarksUserControl(questionsPresenter);
+            UpdateQuestionPaperUserControl updateQuestionPaperUserControl = new UpdateQuestionPaperUserControl(questionPaperPresenter);
+            // Dock the userForm to fill the entire client area of FormMenu
+            captureMarksUserControl.Dock = DockStyle.Fill;
+            updateQuestionPaperUserControl.Dock = DockStyle.Fill;
+            // Add the userForm to the Controls collection of FormMenu
+            CaptureMarks.Controls.Add(captureMarksUserControl);
+            UpdateQuestionPaper.Controls.Add(updateQuestionPaperUserControl);
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PnlRight_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         //#region ButtonMouseHoverEvents

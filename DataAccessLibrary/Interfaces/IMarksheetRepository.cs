@@ -9,21 +9,24 @@ namespace DataAccessLibrary.Interfaces
 {
     public interface IMarksheetRepository
     {
-        List<Scoresheets> GetScoresheetsByMarksheetNumber(string studentNumber);
+        //List<Scoresheets> GetScoresheetsByMarksheetNumber(string studentNumber);
 
-        EKS_PUNTESTATE GetDetailsByMNoFromPunte(string marksheetno);
+        //EKS_PUNTESTATE GetDetailsByMNoFromPunte(string marksheetno);
 
-        Vraagleer GetVragRec(string subcode, short? pNumberPunte, string marksheet);
+        //Vraagleer GetVragRec(string subcode, short? pNumberPunte, string marksheet);
 
-        MarksheetDTO GetScoresheetRecords(string marksheetnumber);
+        //MarksheetDTO GetScoresheetRecords(string marksheetnumber);
 
-        string RemoveDots(string input);
+        //string RemoveDots(string input);
+        MarksheetDTO GetMarksheetTopDetails(string psMsheet);
 
-        bool CheckMarksheetNumber(string MarksheetNumber);
+        //bool CheckMarksheetNumber(string MarksheetNumber);
 
-        EKS_PUNTESTATE GetByMarksheeet(string marksheet);
+        //EKS_PUNTESTATE GetByMarksheeet(string marksheet);
 
-        void SaveMarks(string subCode, string SubMarks);
+        //void SaveMarks(string subCode, string SubMarks);
+        MarksheetDTO GetMarksheetDetails(string psMsheet); 
+        List<MarksheetDTO> GetExamNumberList(string psMsheet); 
     }
 }
 

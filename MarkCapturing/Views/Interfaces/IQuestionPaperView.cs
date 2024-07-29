@@ -27,8 +27,6 @@ namespace MarkCapturing.Views.Interfaces
         void ShowMessage(string message);
           
         void CreateOrUpdateQuestionPaper();
-           
-        void label4_Click(object sender, EventArgs e);
         
         void maxMark_KeyDown(object sender, KeyEventArgs e);
 

@@ -56,15 +56,15 @@ namespace MarkCapturing.Presenter
         }
 
         #region NewValidation
-        public bool ValidateMarksheet(string MarksheetNo)
-        {
-            return marksheetRepository.CheckMarksheetNumber(MarksheetNo);
-        }
+        //public bool ValidateMarksheet(string MarksheetNo)
+        //{
+        //    return marksheetRepository.CheckMarksheetNumber(MarksheetNo);
+        //}
         #endregion
-        public void SaveMarks(string subcode, string marks)
-        {
-            marksheetRepository.SaveMarks(subcode, marks);
-        }
+        //public void SaveMarks(string subcode, string marks)
+        //{
+        //    marksheetRepository.SaveMarks(subcode, marks);
+        //}
 
         //private List<Scoresheets> RetrieveRecords(string MarksheetNo)
         //{
@@ -79,23 +79,31 @@ namespace MarkCapturing.Presenter
         //    }
         //    return Scoresheets;
         //}
-        public MarksheetDTO GetScoresheetRecords(string marksheetnumber)
+        public MarksheetDTO GetScoresheetRecords(string marksheetNumber)
         {
-            return marksheetRepository.GetScoresheetRecords(marksheetnumber);
+            return marksheetRepository.GetMarksheetDetails(marksheetNumber);
         }
-        public List<string> GetByMarksheet(string marksheet)
+        public List<MarksheetDTO> GetExamNumberList(string psMsheet)
         {
-            return marksheetRepository.GetByMarksheet(marksheet);
+            return marksheetRepository.GetExamNumberList(psMsheet);
         }
-        public void SearchMarksheet()
-        {
-            string marksheetNumber = view.MarksheetNumber;
-            //EKS_PUNTESTATE eKS_PUNTESTATE = marksheetRepository.GetByMarksheeet(marksheetNumber);
-            //ValidateMarksheet(marksheetNumber);
-            /*List<Scoresheets> scoresheets = RetrieveRecords(marksheetNumber);*/
-            MarksheetDTO scoresheets = marksheetRepository.GetScoresheetRecords(marksheetNumber);
-            view.ShowListScoresheet(scoresheets);
-        }
+        //public MarksheetDTO GetScoresheetRecords(string marksheetnumber)
+        //{
+        //    return marksheetRepository.GetScoresheetRecords(marksheetnumber);
+        //}
+        //public List<string> GetByMarksheet(string marksheet)
+        //{
+        //    return marksheetRepository.GetByMarksheet(marksheet);
+        //}
+        //public void SearchMarksheet()
+        //{
+        //    string marksheetNumber = view.MarksheetNumber;
+        //    //EKS_PUNTESTATE eKS_PUNTESTATE = marksheetRepository.GetByMarksheeet(marksheetNumber);
+        //    //ValidateMarksheet(marksheetNumber);
+        //    /*List<Scoresheets> scoresheets = RetrieveRecords(marksheetNumber);*/
+        //    MarksheetDTO scoresheets = marksheetRepository.GetScoresheetRecords(marksheetNumber);
+        //    view.ShowListScoresheet(scoresheets);
+        //}
         //public void SaveMarkData()//will implement at a later stage
         //{
         //    string[] enteredData = view.GetEnteredData();

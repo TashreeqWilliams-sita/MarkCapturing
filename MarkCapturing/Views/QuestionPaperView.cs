@@ -423,22 +423,30 @@ namespace MarkCapturing.Views
                 
             }
         }
+        public int GetCombinationMaxMark(string eksamen, string vraestelKode, int firstQuestion, int lastQuestion, int maxQuestions)
+        {
+            // This function will execute a SQL query similar to the one we discussed, tailored to the parameters provided
+            // Database access code (e.g., using ADO.NET, Entity Framework, Dapper, etc.) goes here
+            // Placeholder return statement
+            return 0; // This should actually return the sum from the database query
+        }
 
         public void UpdateCombinationTextboxes(VraagleerDTO vraagleerDTO)
         {
-            // Validate that eksamen and vraestelKode are not null
             if (string.IsNullOrEmpty(selectedEksamen) || string.IsNullOrEmpty(selectedVraestelKode))
             {
-                // Handle the case where eksamen or vraestelKode is null
                 return;
             }
+
             vraagleerDTO = presenter.GetQuestionPaperDetails(selectedEksamen, selectedVraestelKode);
+
+            bool allCombinationsValid = true; // Track if all combinations are valid
+
             for (int i = 1; i <= 6; i++)
             {
                 TextBox fromTextbox = Controls.Find($"KeuseVraeEersteVrgNo{i}", true).FirstOrDefault() as TextBox;
                 TextBox toTextbox = Controls.Find($"KeuseVraeLaasteVrgNo{i}", true).FirstOrDefault() as TextBox;
                 TextBox maxQuestionsTextBox = Controls.Find($"KeuseVraeGetalVrae{i}", true).FirstOrDefault() as TextBox;
-
 
                 if (i <= vraagleerDTO.GetalKombinasiesVanKeuseVrae)
                 {
@@ -453,22 +461,35 @@ namespace MarkCapturing.Views
                     maxQuestionsTextBox.Enabled = false;
                 }
 
-                // Retrieve the VraagNaam and VraagMak values from the details object (VraagleerDTO)
-                Int16? keuseVraeEersteVrgNo = vraagleerDTO?.GetType().GetProperty($"KeuseVraeEersteVrgNo{i}")?.GetValue(vraagleerDTO) as Int16?;
-                Int16? keuseVraeLaasteVrgNo = vraagleerDTO?.GetType().GetProperty($"KeuseVraeLaasteVrgNo{i}")?.GetValue(vraagleerDTO) as Int16?;
-                Int16? keuseVraeGetalVrae = vraagleerDTO?.GetType().GetProperty($"KeuseVraeGetalVrae{i}")?.GetValue(vraagleerDTO) as Int16?;
+                Int16? firstQuestion = vraagleerDTO?.GetType().GetProperty($"KeuseVraeEersteVrgNo{i}")?.GetValue(vraagleerDTO) as Int16?;
+                Int16? lastQuestion = vraagleerDTO?.GetType().GetProperty($"KeuseVraeLaasteVrgNo{i}")?.GetValue(vraagleerDTO) as Int16?;
+                Int16? maxQuestions = vraagleerDTO?.GetType().GetProperty($"KeuseVraeGetalVrae{i}")?.GetValue(vraagleerDTO) as Int16?;
 
+                fromTextbox.Text = firstQuestion.ToString() ?? "";
+                toTextbox.Text = lastQuestion.ToString() ?? "";
+                maxQuestionsTextBox.Text = maxQuestions.ToString() ?? "";
 
-                fromTextbox.Text = keuseVraeEersteVrgNo.ToString() ?? ""; // Use null-conditional operator to handle null values
-                toTextbox.Text = keuseVraeLaasteVrgNo.ToString() ?? "";
-                maxQuestionsTextBox.Text = keuseVraeGetalVrae.ToString() ?? "";
+                if (firstQuestion.HasValue && lastQuestion.HasValue && maxQuestions.HasValue)
+                {
+                    int combinationMaxMark = GetCombinationMaxMark(selectedEksamen, selectedVraestelKode, firstQuestion.Value, lastQuestion.Value, maxQuestions.Value);
+                    // Assume we retrieve maxMark for the current combination from somewhere in VraagleerDTO
+                    int maxMark = vraagleerDTO?.GetType().GetProperty($"MaxMark{i}")?.GetValue(vraagleerDTO) as int? ?? 0;
 
-               
+                    if (combinationMaxMark != maxMark)
+                    {
+                        allCombinationsValid = false;
+                        MessageBox.Show($"Error: Combination {i} max mark does not match expected max mark.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            AttachCombinationTextBoxEvents();
-            //exitButton.Focus();
-        }
 
+            AttachCombinationTextBoxEvents();
+            // If all combinations are valid, possibly proceed to other actions or focus the exit button
+            if (allCombinationsValid)
+            {
+                //exitButton.Focus(); // Enable this line if necessary
+            }
+        }
             // Implementation of IQuestionPaperView methods
 
             public void GetQuestionPaper(Vraagleer questionPaper)
@@ -624,6 +645,11 @@ namespace MarkCapturing.Views
         }
 
         private void KeuseVraeEersteVrgNo1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void KeuseVraeEersteVrgNo1_TextChanged(object sender, EventArgs e)
         {
 
         }

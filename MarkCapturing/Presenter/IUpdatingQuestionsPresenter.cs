@@ -11,14 +11,16 @@ namespace MarkCapturing.Presenter
     {
         public void ShowList();
 
-        public bool ValidateMarksheet(string MarksheetNo);
+        //public bool ValidateMarksheet(string MarksheetNo);
+        public MarksheetDTO GetScoresheetRecords(string marksheetNumber);
+       
 
-        public void SaveMarks(string subcode, string marks);
+        //public void SaveMarks(string subcode, string marks);
 
-        public MarksheetDTO GetScoresheetRecords(string marksheetnumber);
+        //public MarksheetDTO GetScoresheetRecords(string marksheetnumber);
 
-        public void SearchMarksheet();
-        List<string> GetByMarksheet(string marksheet);
+        //public void SearchMarksheet();
+        //List<string> GetByMarksheet(string marksheet);
     }
 
 

@@ -97,60 +97,60 @@ namespace MarkCapturing.Views
         #region KeyDown
         private void txtMarksheetNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                bool isValidMarksheetNumber = QuestionsPresenter.ValidateMarksheet(MarksheetNumber);
-                //Updatepresenter.ValidateMarksheetNumber(MarksheetNumber);
-                if (isValidMarksheetNumber)
-                {
-                MarksheetDTO dto = QuestionsPresenter.GetScoresheetRecords(MarksheetNumber);
-                examNumberList.Items.AddRange(QuestionsPresenter.GetByMarksheet(MarksheetNumber).ToArray());
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    bool isValidMarksheetNumber = QuestionsPresenter.ValidateMarksheet(MarksheetNumber);
+            //    //Updatepresenter.ValidateMarksheetNumber(MarksheetNumber);
+            //    if (isValidMarksheetNumber)
+            //    {
+            //    MarksheetDTO dto = QuestionsPresenter.GetScoresheetRecords(MarksheetNumber);
+            //    //examNumberList.Items.AddRange(QuestionsPresenter.GetScoresheetRecords(MarksheetNumber).);
 
-                //Display paper code of the Exam year
-                var idList = QuestionsPresenter.GetByMarksheet(MarksheetNumber);
+            //    //Display paper code of the Exam year
+            //    var idList = QuestionsPresenter.GetByMarksheet(MarksheetNumber);
 
-                string firstExamNumber = "";
+            //    string firstExamNumber = "";
 
-                if (idList != null && idList.Count > 0)
-                {
-                    firstExamNumber = idList[0];
-                }
+            //    if (idList != null && idList.Count > 0)
+            //    {
+            //        firstExamNumber = idList[0];
+            //    }
 
-                if (!string.IsNullOrEmpty(firstExamNumber))
-                {
-                    int index = examNumberList.FindStringExact(firstExamNumber);
+            //    if (!string.IsNullOrEmpty(firstExamNumber))
+            //    {
+            //        int index = examNumberList.FindStringExact(firstExamNumber);
 
-                    if (index != -1)
-                    {
-                        examNumberList.SelectedIndex = index;
-                    }
-                    else
-                    {
-                        // Value not found in list
-                    }
-                }
+            //        if (index != -1)
+            //        {
+            //            examNumberList.SelectedIndex = index;
+            //        }
+            //        else
+            //        {
+            //            // Value not found in list
+            //        }
+            //    }
                    
-                    //txtMarksheetNumber.Text = dto.PS_Msheet;
-                    subSystem.Text = dto.PS_KODE;
-                examNumber.Text = dto.PS_ID_NO;
-                examYear.Text = dto.PS_EKS_DAT.ToString();
-                paperCode.Text = dto.PS_VRAESTELKODE;
-                //markQuestion1.Text = dto.PS_VRAAG_1.ToString();
-                //markQuestion2.Text = dto.PS_VRAAG_2.ToString();
-                //markQuestion3.Text = dto.PS_VRAAG_3.ToString();
-                //markQuestion4.Text = dto.PS_VRAAG_4.ToString();
-                //markQuestion5.Text = dto.PS_VRAAG_5.ToString();
-                int hashedTotal = ((int)dto.PS_GEKONTROLEERDEPUNT) + dto.PS_MarksheetSort;
-                textBox26.Text = hashedTotal.ToString();
-                hashTotal.Text = dto.PS_KAFTOTAAL.ToString();
-                total.Text = dto.PS_GEKONTROLEERDEPUNT.ToString();
-                //UpdateQuestionMarkTextBoxes(dto);
-            }
-                else
-                {
-                    MessageBox.Show("Marksheet number does'nt exist. Please enter a valid marksheet number.");
-                }
-            }
+            //        //txtMarksheetNumber.Text = dto.PS_Msheet;
+            //        subSystem.Text = dto.PS_KODE;
+            //    examNumber.Text = dto.PS_ID_NO;
+            //    examYear.Text = dto.PS_EKS_DAT.ToString();
+            //    //paperCode.Text = dto.PS_VRAESTELKODE;
+            //    //markQuestion1.Text = dto.PS_VRAAG_1.ToString();
+            //    //markQuestion2.Text = dto.PS_VRAAG_2.ToString();
+            //    //markQuestion3.Text = dto.PS_VRAAG_3.ToString();
+            //    //markQuestion4.Text = dto.PS_VRAAG_4.ToString();
+            //    //markQuestion5.Text = dto.PS_VRAAG_5.ToString();
+            //    int hashedTotal = ((int)dto.PS_GEKONTROLEERDEPUNT) + dto.PS_MarksheetSort;
+            //    textBox26.Text = hashedTotal.ToString();
+            //    hashTotal.Text = dto.PS_KAFTOTAAL.ToString();
+            //    total.Text = dto.PS_GEKONTROLEERDEPUNT.ToString();
+            //    //UpdateQuestionMarkTextBoxes(dto);
+            //}
+            //    else
+            //    {
+            //        MessageBox.Show("Marksheet number does'nt exist. Please enter a valid marksheet number.");
+            //    }
+            //}
         }
         #endregion
         public void UpdateQuestionMarkTextBoxes(MarksheetDTO marksheetDTO)
@@ -273,6 +273,12 @@ namespace MarkCapturing.Views
             //UpdateQuestionTextBoxes(vraagleerDTO);
             //UpdateCombinationTextboxes(vraagleerDTO);
             //maxMark.Focus();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Button was clicked!");
+            Console.WriteLine("Button was clicked!");
         }
     }
 }

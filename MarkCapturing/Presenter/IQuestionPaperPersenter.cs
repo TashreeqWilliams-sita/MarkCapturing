@@ -34,12 +34,13 @@ namespace MarkCapturing.Presenter
         void UpdateGetalKombinasiesTeBeantwoord(string eksamen, string vraestelKode, short? getalKombinasiesTeBeantwoord);
 
         void SaveQuestionPaperDetails(string eksamen, string vraestelKode, VraagleerDTO vraagleerDTO);
-           
+        VraagleerDTO UpdateCombinationTotalTextboxes(string eksamen, string vraestelKode);
+
        //Vraagleer GetQuestionPaperDetails(string eksamen, string vraestelKode);
-           
 
 
-        
+
+
     }
 
 

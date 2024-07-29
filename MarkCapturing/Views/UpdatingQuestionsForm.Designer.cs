@@ -212,7 +212,7 @@ namespace MarkCapturing.Views
             this.lblMarksheetNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblMarksheetNo.Location = new System.Drawing.Point(14, 12);
             this.lblMarksheetNo.Name = "lblMarksheetNo";
-            this.lblMarksheetNo.Size = new System.Drawing.Size(185, 22);
+            this.lblMarksheetNo.Size = new System.Drawing.Size(177, 21);
             this.lblMarksheetNo.TabIndex = 17;
             this.lblMarksheetNo.Text = "Marksheet Number";
             // 
@@ -395,6 +395,7 @@ namespace MarkCapturing.Views
             this.button2.TabIndex = 26;
             this.button2.Text = "Next #";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -455,7 +456,7 @@ namespace MarkCapturing.Views
             this.label30.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label30.Location = new System.Drawing.Point(75, 361);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(53, 22);
+            this.label30.Size = new System.Drawing.Size(52, 21);
             this.label30.TabIndex = 37;
             this.label30.Text = "Total";
             // 
@@ -466,7 +467,7 @@ namespace MarkCapturing.Views
             this.label29.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label29.Location = new System.Drawing.Point(26, 328);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(102, 22);
+            this.label29.Size = new System.Drawing.Size(98, 21);
             this.label29.TabIndex = 36;
             this.label29.Text = "Hash total";
             // 
@@ -566,7 +567,7 @@ namespace MarkCapturing.Views
             this.label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label27.Location = new System.Drawing.Point(106, 13);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(56, 22);
+            this.label27.Size = new System.Drawing.Size(53, 21);
             this.label27.TabIndex = 30;
             this.label27.Text = "Mark";
             // 
@@ -577,7 +578,7 @@ namespace MarkCapturing.Views
             this.label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label28.Location = new System.Drawing.Point(21, 13);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(58, 22);
+            this.label28.Size = new System.Drawing.Size(56, 21);
             this.label28.TabIndex = 29;
             this.label28.Text = "Q.No";
             // 
@@ -677,7 +678,7 @@ namespace MarkCapturing.Views
             this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label25.Location = new System.Drawing.Point(106, 13);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(56, 22);
+            this.label25.Size = new System.Drawing.Size(53, 21);
             this.label25.TabIndex = 30;
             this.label25.Text = "Mark";
             // 
@@ -688,7 +689,7 @@ namespace MarkCapturing.Views
             this.label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label26.Location = new System.Drawing.Point(21, 13);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(58, 22);
+            this.label26.Size = new System.Drawing.Size(56, 21);
             this.label26.TabIndex = 29;
             this.label26.Text = "Q.No";
             // 
@@ -788,7 +789,7 @@ namespace MarkCapturing.Views
             this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label23.Location = new System.Drawing.Point(106, 13);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(56, 22);
+            this.label23.Size = new System.Drawing.Size(53, 21);
             this.label23.TabIndex = 30;
             this.label23.Text = "Mark";
             // 
@@ -799,7 +800,7 @@ namespace MarkCapturing.Views
             this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label24.Location = new System.Drawing.Point(21, 13);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(58, 22);
+            this.label24.Size = new System.Drawing.Size(56, 21);
             this.label24.TabIndex = 29;
             this.label24.Text = "Q.No";
             // 
@@ -899,7 +900,7 @@ namespace MarkCapturing.Views
             this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label21.Location = new System.Drawing.Point(106, 13);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(56, 22);
+            this.label21.Size = new System.Drawing.Size(53, 21);
             this.label21.TabIndex = 30;
             this.label21.Text = "Mark";
             // 
@@ -910,7 +911,7 @@ namespace MarkCapturing.Views
             this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label22.Location = new System.Drawing.Point(21, 13);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(58, 22);
+            this.label22.Size = new System.Drawing.Size(56, 21);
             this.label22.TabIndex = 29;
             this.label22.Text = "Q.No";
             // 
@@ -1010,7 +1011,7 @@ namespace MarkCapturing.Views
             this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label19.Location = new System.Drawing.Point(106, 13);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(56, 22);
+            this.label19.Size = new System.Drawing.Size(53, 21);
             this.label19.TabIndex = 30;
             this.label19.Text = "Mark";
             // 
@@ -1021,7 +1022,7 @@ namespace MarkCapturing.Views
             this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label20.Location = new System.Drawing.Point(21, 13);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 22);
+            this.label20.Size = new System.Drawing.Size(56, 21);
             this.label20.TabIndex = 29;
             this.label20.Text = "Q.No";
             // 
@@ -1131,7 +1132,7 @@ namespace MarkCapturing.Views
             this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label18.Location = new System.Drawing.Point(101, 13);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 22);
+            this.label18.Size = new System.Drawing.Size(53, 21);
             this.label18.TabIndex = 30;
             this.label18.Text = "Mark";
             // 
@@ -1142,7 +1143,7 @@ namespace MarkCapturing.Views
             this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label17.Location = new System.Drawing.Point(3, 13);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 22);
+            this.label17.Size = new System.Drawing.Size(89, 21);
             this.label17.TabIndex = 29;
             this.label17.Text = "Question";
             // 
@@ -1160,7 +1161,7 @@ namespace MarkCapturing.Views
             this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label16.Location = new System.Drawing.Point(169, 49);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(106, 22);
+            this.label16.Size = new System.Drawing.Size(103, 21);
             this.label16.TabIndex = 28;
             this.label16.Text = "Exam year";
             // 
@@ -1180,7 +1181,7 @@ namespace MarkCapturing.Views
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label15.Location = new System.Drawing.Point(598, 16);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(204, 22);
+            this.label15.Size = new System.Drawing.Size(196, 21);
             this.label15.TabIndex = 26;
             this.label15.Text = "Other exam numbers";
             // 
@@ -1198,7 +1199,7 @@ namespace MarkCapturing.Views
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label14.Location = new System.Drawing.Point(164, 16);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(213, 22);
+            this.label14.Size = new System.Drawing.Size(204, 21);
             this.label14.TabIndex = 18;
             this.label14.Text = "Current exam number";
             // 
@@ -1229,7 +1230,7 @@ namespace MarkCapturing.Views
             this.subjectName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.subjectName.Location = new System.Drawing.Point(400, 88);
             this.subjectName.Name = "subjectName";
-            this.subjectName.Size = new System.Drawing.Size(66, 22);
+            this.subjectName.Size = new System.Drawing.Size(64, 21);
             this.subjectName.TabIndex = 27;
             this.subjectName.Text = "Name";
             // 
@@ -1261,7 +1262,7 @@ namespace MarkCapturing.Views
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label13.Location = new System.Drawing.Point(523, 52);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 22);
+            this.label13.Size = new System.Drawing.Size(72, 21);
             this.label13.TabIndex = 23;
             this.label13.Text = "Centre";
             // 
@@ -1272,7 +1273,7 @@ namespace MarkCapturing.Views
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label12.Location = new System.Drawing.Point(202, 49);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 22);
+            this.label12.Size = new System.Drawing.Size(62, 21);
             this.label12.TabIndex = 22;
             this.label12.Text = "Paper";
             // 
@@ -1283,7 +1284,7 @@ namespace MarkCapturing.Views
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label11.Location = new System.Drawing.Point(14, 49);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 22);
+            this.label11.Size = new System.Drawing.Size(108, 21);
             this.label11.TabIndex = 21;
             this.label11.Text = "Sub system";
             // 
@@ -1301,7 +1302,7 @@ namespace MarkCapturing.Views
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(532, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 22);
+            this.label10.Size = new System.Drawing.Size(63, 21);
             this.label10.TabIndex = 19;
             this.label10.Text = "Status";
             // 

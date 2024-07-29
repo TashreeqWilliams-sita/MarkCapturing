@@ -451,6 +451,7 @@ namespace MarkCapturing.Views
             this.KeuseVraeEersteVrgNo1.Name = "KeuseVraeEersteVrgNo1";
             this.KeuseVraeEersteVrgNo1.Size = new System.Drawing.Size(73, 22);
             this.KeuseVraeEersteVrgNo1.TabIndex = 2;
+            this.KeuseVraeEersteVrgNo1.TextChanged += new System.EventHandler(this.KeuseVraeEersteVrgNo1_TextChanged);
             this.KeuseVraeEersteVrgNo1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeuseVraeEersteVrgNo1_KeyDown);
             // 
             // label38

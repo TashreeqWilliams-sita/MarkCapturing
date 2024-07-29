@@ -11,6 +11,7 @@ public class QuestionPaperRepository
     //private readonly VraagleerDTO _vraagleerDTO;
     Vraagleer questionPaper = new Vraagleer();
     VraagleerDTO vraagleerDTO = new VraagleerDTO();
+    List<int?> combinationMaxMarks = new List<int?>();
 
     public QuestionPaperRepository(NSC_VraagpunteStelselEntities dbContext/*, VraagleerDTO vraagleerDTO*/)
     {
@@ -163,9 +164,90 @@ public class QuestionPaperRepository
             dbContext.SaveChanges();
         }
     }
+    public VraagleerDTO UpdateCombinationTotalTextboxes(string eksamen, string vraestelKode)
+    {
+        var vraagleerData = dbContext.Vraagleers
+            .Where(q => q.Eksamen == eksamen && q.VraestelKode == vraestelKode)
+            .Select(q => new
+            {
+                q.VraestelKode,
+                KeuseVraeGetalVrae1 = q.KeuseVraeGetalVrae1 ?? 0,
+                KeuseVraeEersteVrgNo1 = q.KeuseVraeEersteVrgNo1 ?? 0,
+                KeuseVraeLaasteVrgNo1 = q.KeuseVraeLaasteVrgNo1 ?? 0,
+                KeuseVraeGetalVrae2 = q.KeuseVraeGetalVrae2 ?? 0,
+                KeuseVraeEersteVrgNo2 = q.KeuseVraeEersteVrgNo2 ?? 0,
+                KeuseVraeLaasteVrgNo2 = q.KeuseVraeLaasteVrgNo2 ?? 0,
+                KeuseVraeGetalVrae3 = q.KeuseVraeGetalVrae3 ?? 0,
+                KeuseVraeEersteVrgNo3 = q.KeuseVraeEersteVrgNo3 ?? 0,
+                KeuseVraeLaasteVrgNo3 = q.KeuseVraeLaasteVrgNo3 ?? 0,
+                KeuseVraeGetalVrae4 = q.KeuseVraeGetalVrae4 ?? 0,
+                KeuseVraeEersteVrgNo4 = q.KeuseVraeEersteVrgNo4 ?? 0,
+                KeuseVraeLaasteVrgNo4 = q.KeuseVraeLaasteVrgNo4 ?? 0,
+                KeuseVraeGetalVrae5 = q.KeuseVraeGetalVrae5 ?? 0,
+                KeuseVraeEersteVrgNo5 = q.KeuseVraeEersteVrgNo5 ?? 0,
+                KeuseVraeLaasteVrgNo5 = q.KeuseVraeLaasteVrgNo5 ?? 0,
+                KeuseVraeGetalVrae6 = q.KeuseVraeGetalVrae6 ?? 0,
+                KeuseVraeEersteVrgNo6 = q.KeuseVraeEersteVrgNo6 ?? 0,
+                KeuseVraeLaasteVrgNo6 = q.KeuseVraeLaasteVrgNo6 ?? 0,
+                VraagMaksValues = new List<float?> { q.VraagMaks1, q.VraagMaks2, q.VraagMaks3, q.VraagMaks4,
+                q.VraagMaks5, q.VraagMaks6, q.VraagMaks7, q.VraagMaks8, q.VraagMaks9, q.VraagMaks10,q.VraagMaks11, 
+                q.VraagMaks12, q.VraagMaks13, q.VraagMaks14, q.VraagMaks15, q.VraagMaks16, q.VraagMaks17, q.VraagMaks18,
+                q.VraagMaks19, q.VraagMaks20, q.VraagMaks21, q.VraagMaks22, q.VraagMaks23, q.VraagMaks24, q.VraagMaks25,
+                q.VraagMaks26, q.VraagMaks27, q.VraagMaks28, q.VraagMaks29, q.VraagMaks30 }
+            })
+            .FirstOrDefault();
+
+        if (vraagleerData == null)
+        {
+            return null; // Or handle the not found situation appropriately
+        }
+
+        Func<int, int, int, float?> calculateSumForRange = (start, count, total) =>
+        {
+            // Adjusts the number of items taken based on the specified 'count' and the total number of available items from 'start'
+            int adjustedCount = Math.Min(count, total - start + 1);
+            return vraagleerData.VraagMaksValues
+                   .Skip(start - 1)
+                   .Take(adjustedCount)
+                   .Sum();
+        };
+
+        int sumGroup1 = (int)Math.Round(calculateSumForRange(vraagleerData.KeuseVraeEersteVrgNo1, vraagleerData.KeuseVraeGetalVrae1, vraagleerData.KeuseVraeLaasteVrgNo1) ?? 0);
+        int sumGroup2 = (int)Math.Round(calculateSumForRange(vraagleerData.KeuseVraeEersteVrgNo2, vraagleerData.KeuseVraeGetalVrae2, vraagleerData.KeuseVraeLaasteVrgNo2) ?? 0);
+        int sumGroup3 = (int)Math.Round(calculateSumForRange(vraagleerData.KeuseVraeEersteVrgNo3, vraagleerData.KeuseVraeGetalVrae3, vraagleerData.KeuseVraeLaasteVrgNo3) ?? 0);
+        int sumGroup4 = (int)Math.Round(calculateSumForRange(vraagleerData.KeuseVraeEersteVrgNo4, vraagleerData.KeuseVraeGetalVrae4, vraagleerData.KeuseVraeLaasteVrgNo4) ?? 0);
+        int sumGroup5 = (int)Math.Round(calculateSumForRange(vraagleerData.KeuseVraeEersteVrgNo5, vraagleerData.KeuseVraeGetalVrae5, vraagleerData.KeuseVraeLaasteVrgNo5) ?? 0);
+        int sumGroup6 = (int)Math.Round(calculateSumForRange(vraagleerData.KeuseVraeEersteVrgNo6, vraagleerData.KeuseVraeGetalVrae6, vraagleerData.KeuseVraeLaasteVrgNo6) ?? 0);
+
+
+        vraagleerDTO = new VraagleerDTO
+        {
+        //    VraestelKode = vraagleerData.VraestelKode,
+        //    Eksamen = eksamen,
+            CombinationMaxMarks = new List<int?> { sumGroup1, sumGroup2, sumGroup3, sumGroup4, sumGroup5, sumGroup6 } 
+        };
+
+        return vraagleerDTO;
+    }
+
+
+    private void DisplayOrUpdateUI(VraagleerDTO vraagleerDTO)
+    {
+        // Implementation to update the UI based on the provided vraagleerDTO
+        // This might include setting text boxes, labels, etc.
+    }
+
+    private void HandleMissingQuestionPaper()
+    {
+        // Implementation to handle the scenario when a question paper is not found
+        // Could be showing a message box or updating status labels
+    }
+
+
     public VraagleerDTO GetQuestionPaperDetails(string eksamen, string vraestelKode)
     {
-
+        //List<int?> combinationMaxMarks = new List<int?>();
+        UpdateCombinationTotalTextboxes(eksamen, vraestelKode);
         questionPaper = dbContext.Set<Vraagleer>()
             .Where(q => q.Eksamen == eksamen.ToString() && q.VraestelKode == vraestelKode.ToString())
             .FirstOrDefault();
@@ -177,6 +259,7 @@ public class QuestionPaperRepository
                 VraestelKode = questionPaper.VraestelKode,
                 Eksamen = questionPaper.Eksamen,
                 GetalVraeOpVraestel = questionPaper.GetalVraeOpVraestel,
+                CombinationMaxMarks = vraagleerDTO.CombinationMaxMarks,
                 //Question number
                 VraagNaam1 = questionPaper.VraagNaam1 ?? "1",
                 VraagNaam2 = questionPaper.VraagNaam2 ?? "2",
@@ -297,7 +380,9 @@ public class QuestionPaperRepository
                 KeuseVraeGetalVrae6 = questionPaper.KeuseVraeGetalVrae6,
 
             };
+            
             return vraagleerDTO;
+
         }
         else
         {

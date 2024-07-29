@@ -72,6 +72,10 @@ namespace MarkCapturing.Presenter
         {
             repository.SaveQuestionPaperDetails(eksamen, vraestelKode, vraagleerDTO);
         }
+        public VraagleerDTO UpdateCombinationTotalTextboxes(string eksamen, string vraestelKode)
+        {
+            return repository.UpdateCombinationTotalTextboxes(eksamen, vraestelKode);
+        }
         //public Vraagleer GetQuestionPaperDetails(string eksamen, string vraestelKode)
         //{
         //    try

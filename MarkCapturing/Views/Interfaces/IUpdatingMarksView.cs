@@ -13,8 +13,8 @@ namespace MarkCapturing.Views
     //Once we finish with our interface we move to the presenter
     public interface IUpdatingMarksView
     {
-        string MarksheetNumber { get; }
-        void ShowErrorMessage(string message);
+        //string MarksheetNumber { get; }
+        //void ShowErrorMessage(string message);
         void ShowListScoresheet(MarksheetDTO ScoresheetList);
         void ShowRecords();
     }
