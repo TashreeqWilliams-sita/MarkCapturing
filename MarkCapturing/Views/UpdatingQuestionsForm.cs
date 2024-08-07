@@ -228,6 +228,11 @@ namespace MarkCapturing.Views
 
         private void txtMarksheetNumber_TextChanged(object sender, EventArgs e)
         {
+             string textBox = txtMarksheetNumber.Text;
+            if (textBox.Contains("-"))
+            {
+                MessageBox.Show("Error: Number has '-' in it.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

@@ -9,10 +9,11 @@ namespace MarkCapturing.Presenter
 {
     public interface IUpdatingQuestionsPresenter
     {
-        public void ShowList();
+        void ShowList();
 
         //public bool ValidateMarksheet(string MarksheetNo);
-        public MarksheetDTO GetScoresheetRecords(string marksheetNumber);
+        MarksheetDTO GetScoresheetRecords(string marksheetNumber);
+        
        
 
         //public void SaveMarks(string subcode, string marks);

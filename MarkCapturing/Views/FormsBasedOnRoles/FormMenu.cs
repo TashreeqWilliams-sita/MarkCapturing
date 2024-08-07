@@ -154,6 +154,11 @@ namespace MarkCapturing.Views
 
         }
 
+        private void textBox1_MarkSheetTextBox(object sender, EventArgs e)
+        {
+            //if textbox takes marksheet number, then call relevent methods to get your info
+        }
+
         //#region ButtonMouseHoverEvents
         //private void BtnUpdateQuestion_MouseHover(object sender, EventArgs e)
         //{
