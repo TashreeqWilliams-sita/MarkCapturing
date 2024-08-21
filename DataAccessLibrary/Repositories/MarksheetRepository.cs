@@ -92,7 +92,7 @@ namespace DataAccessLibrary.Repositories
 		public MarksheetDTO GetMarksheetDetails(string psMsheet)
 		{
 			QuestionPaperRepository questionPaperRepository = new QuestionPaperRepository(dbContext);
-			var getMarksheetTopValues = GetMarksheetTopDetails(psMsheet);
+			var getMarksheetTopValues =  GetMarksheetTopDetails(psMsheet);
 			var questionPaperDetails = questionPaperRepository.GetQuestionPaperDetails(getMarksheetTopValues.PS_EKS_DAT.ToString(), getMarksheetTopValues.VraestelKode);
 			//Type dbContextType = dbContext.GetType();
 			PropertyInfo[] properties = dbContext.GetType().GetProperties();

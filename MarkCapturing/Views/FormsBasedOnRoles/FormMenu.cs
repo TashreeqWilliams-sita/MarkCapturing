@@ -159,6 +159,11 @@ namespace MarkCapturing.Views
             //if textbox takes marksheet number, then call relevent methods to get your info
         }
 
+        private void label14_Click(object sender, EventArgs e)
+        {
+            label14.Text = "Hello world";
+        }
+
         //#region ButtonMouseHoverEvents
         //private void BtnUpdateQuestion_MouseHover(object sender, EventArgs e)
         //{

@@ -284,6 +284,7 @@ namespace MarkCapturing.Views
             this.label14.Size = new System.Drawing.Size(93, 21);
             this.label14.TabIndex = 3;
             this.label14.Text = "error label";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textBox1
             // 
@@ -350,10 +351,10 @@ namespace MarkCapturing.Views
             // 
             // tabPage6
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Location = new System.Drawing.Point(4, 26);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1197, 703);
+            this.tabPage6.Size = new System.Drawing.Size(1197, 702);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Verify Marks";
             this.tabPage6.UseVisualStyleBackColor = true;
