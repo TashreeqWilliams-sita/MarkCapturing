@@ -129,7 +129,7 @@ namespace MarkCapturing.Views
             //            // Value not found in list
             //        }
             //    }
-                   
+
             //        //txtMarksheetNumber.Text = dto.PS_Msheet;
             //        subSystem.Text = dto.PS_KODE;
             //    examNumber.Text = dto.PS_ID_NO;
@@ -151,6 +151,8 @@ namespace MarkCapturing.Views
             //        MessageBox.Show("Marksheet number does'nt exist. Please enter a valid marksheet number.");
             //    }
             //}
+
+           
         }
         #endregion
         public void UpdateQuestionMarkTextBoxes(MarksheetDTO marksheetDTO)
@@ -284,6 +286,16 @@ namespace MarkCapturing.Views
         {
             MessageBox.Show("Button was clicked!");
             Console.WriteLine("Button was clicked!");
+        }
+
+        private void btnShowOutstandingMarks_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Working!!");
+        }
+
+        private void markQuestion1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

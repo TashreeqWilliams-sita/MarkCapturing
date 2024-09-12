@@ -26,7 +26,11 @@ namespace DataAccessLibrary.Interfaces
 
         //void SaveMarks(string subCode, string SubMarks);
         MarksheetDTO GetMarksheetDetails(string psMsheet); 
-        List<MarksheetDTO> GetExamNumberList(string psMsheet); 
+        List<MarksheetDTO> GetExamNumberList(string psMsheet);
+
+        string GetMarksheetNum(string TextScan);
+
+
     }
 }
 

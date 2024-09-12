@@ -1,4 +1,5 @@
 ﻿using DataAccessLibrary;
+using DataAccessLibrary.Interfaces;
 using DataAccessLibrary.Repositories;
 using DTOs;
 using MarkCapturing.Presenter;
@@ -6,7 +7,11 @@ using MarkCapturing.Views.FormsBasedOnRoles;
 using MarkCapturing.Views.Interfaces;
 using MarkCapturing.Views.Security;
 using System;
+using System.Globalization;
+using System.Linq;
+using System.Reflection.Emit;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MarkCapturing.Views
 {
@@ -16,9 +21,13 @@ namespace MarkCapturing.Views
         public string Username => DataStorage.UserLoggedIn;
         public string Role=>DataStorage.Role;
 
+        private readonly MarksheetRepository _marksheetRepository;
+
         public FormMenu()
         {
             InitializeComponent();
+            NSC_VraagpunteStelselEntities dbContext = new NSC_VraagpunteStelselEntities();
+            _marksheetRepository = new MarksheetRepository(dbContext);
             _presenter = new MenuPresenter(this);
             LblUserLoggedin.Text = Username;
         }
@@ -142,6 +151,7 @@ namespace MarkCapturing.Views
             // Add the userForm to the Controls collection of FormMenu
             CaptureMarks.Controls.Add(captureMarksUserControl);
             UpdateQuestionPaper.Controls.Add(updateQuestionPaperUserControl);
+            
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -159,10 +169,30 @@ namespace MarkCapturing.Views
             //if textbox takes marksheet number, then call relevent methods to get your info
         }
 
+      
         private void label14_Click(object sender, EventArgs e)
         {
-            label14.Text = "Hello world";
+           
         }
+        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        
+        {
+            string inputText = textBox1.Text;
+            string result = null;
+            textBox1.MaxLength = 11;
+
+            if (inputText.Length == 11 && inputText[9] == '-') { 
+                
+                result = _marksheetRepository.GetMarksheetNum(inputText);
+
+                label14.Text = result;
+                textBox1.Clear();
+            }
+            
+        }
+
+
 
         //#region ButtonMouseHoverEvents
         //private void BtnUpdateQuestion_MouseHover(object sender, EventArgs e)

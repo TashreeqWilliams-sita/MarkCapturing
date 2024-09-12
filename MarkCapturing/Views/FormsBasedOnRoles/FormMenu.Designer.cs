@@ -277,13 +277,14 @@ namespace MarkCapturing.Views
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(419, 220);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(93, 21);
+            this.label14.Size = new System.Drawing.Size(0, 19);
             this.label14.TabIndex = 3;
-            this.label14.Text = "error label";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textBox1
@@ -293,6 +294,7 @@ namespace MarkCapturing.Views
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 28);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label10
             // 

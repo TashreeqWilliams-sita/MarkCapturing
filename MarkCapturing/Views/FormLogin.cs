@@ -149,5 +149,10 @@ namespace MarkCapturing.Views
             ComboBoxUsernames.Items.Clear();
             ComboBoxUsernames.Items.AddRange(usernames.ToArray());
         }
+
+        private void ComboBoxUsernames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

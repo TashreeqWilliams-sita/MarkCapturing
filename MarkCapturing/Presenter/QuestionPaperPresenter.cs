@@ -12,8 +12,7 @@ namespace MarkCapturing.Presenter
 
     public class QuestionPaperPresenter : IQuestionPaperPresenter
     {
-        private readonly QuestionPaperRepository repository;
-        //private readonly QuestionPaperRepository repository;
+        private readonly QuestionPaperRepository repository; 
         private readonly IQuestionPaperView view;
 
         public QuestionPaperPresenter(QuestionPaperRepository repository/*, IQuestionPaperView view*/)

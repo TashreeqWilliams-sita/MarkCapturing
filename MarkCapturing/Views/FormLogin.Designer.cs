@@ -375,6 +375,7 @@ namespace MarkCapturing.Views
             this.ComboBoxUsernames.Name = "ComboBoxUsernames";
             this.ComboBoxUsernames.Size = new System.Drawing.Size(528, 24);
             this.ComboBoxUsernames.TabIndex = 13;
+            this.ComboBoxUsernames.SelectedIndexChanged += new System.EventHandler(this.ComboBoxUsernames_SelectedIndexChanged);
             // 
             // TxtUsername
             // 

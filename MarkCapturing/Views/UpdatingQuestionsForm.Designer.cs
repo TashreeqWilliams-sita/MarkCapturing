@@ -192,6 +192,7 @@ namespace MarkCapturing.Views
             this.btnShowOutstandingMarks.TabIndex = 21;
             this.btnShowOutstandingMarks.Text = "Outstanding Marks";
             this.btnShowOutstandingMarks.UseVisualStyleBackColor = false;
+            this.btnShowOutstandingMarks.Click += new System.EventHandler(this.btnShowOutstandingMarks_Click);
             // 
             // txtMarksheetNumber
             // 
@@ -1124,6 +1125,7 @@ namespace MarkCapturing.Views
             this.markQuestion1.Name = "markQuestion1";
             this.markQuestion1.Size = new System.Drawing.Size(66, 27);
             this.markQuestion1.TabIndex = 32;
+            this.markQuestion1.TextChanged += new System.EventHandler(this.markQuestion1_TextChanged);
             // 
             // label18
             // 
