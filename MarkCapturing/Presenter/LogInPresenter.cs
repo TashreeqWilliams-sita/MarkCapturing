@@ -109,7 +109,7 @@ namespace MarkCapturing.Presenter
                 bool isValid = authenticationService.AuthenticateUser(loginView.Username, loginView.Password);
                 if (isValid)
                 {
-                    loginView.ShowSuccess("Login Success");
+                   
                     loginView.ShowForm();
                 }
                 else
